@@ -95,8 +95,7 @@ Algumas das perguntas que o projeto se propõe a responder:
 - Quais itens de infraestrutura são mais críticos no cenário nacional?
 - Onde os investimentos públicos devem ser priorizados?
 
-## Organização da Equipe
-## Primeira Etapa
+## Organização da Equipe - Primeira Etapa
 
 A divisão das atividades na Primeira Etapa foi realizada da seguinte forma:
 
