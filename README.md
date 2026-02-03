@@ -29,7 +29,8 @@ O projeto está dividido em **duas etapas principais**:
 - **Primeira Etapa (Fase 1)** – Planejamento, modelagem analítica e definição do processo ETL  
 - **Segunda Etapa (Fase 2)** –
 
-## Primeira Etapa – Planejamento e Modelagem
+## Primeira Etapa
+## Planejamento e Modelagem
 
 A Primeira Etapa teve caráter **conceitual e metodológico**, com foco na compreensão do problema de negócio, definição da base de dados e planejamento do processo analítico.
 
@@ -94,7 +95,8 @@ Algumas das perguntas que o projeto se propõe a responder:
 - Quais itens de infraestrutura são mais críticos no cenário nacional?
 - Onde os investimentos públicos devem ser priorizados?
 
-## Organização da Equipe – Primeira Etapa
+## Organização da Equipe
+## Primeira Etapa
 
 A divisão das atividades na Primeira Etapa foi realizada da seguinte forma:
 
@@ -113,7 +115,7 @@ A divisão das atividades na Primeira Etapa foi realizada da seguinte forma:
 - **Paula Barros Ortiz**  
   Revisão conforme normas ABNT, elaboração da conclusão e organização das referências bibliográficas.
 
-  ## Segunda Etapa – Implantação da Solução (Em desenvolvimento)
+## Segunda Etapa – Implantação da Solução (Em desenvolvimento)
 
 A Segunda Etapa do projeto contempla a implantação da solução proposta na fase inicial,
 incluindo a definição das tecnologias utilizadas, o detalhamento técnico do processo de ETL,
@@ -122,7 +124,7 @@ tomada de decisão.
 
 As entregas desta etapa serão adicionadas gradualmente a este repositório.
 
-  ## Referências
+## Referências
 
 As referências utilizadas estão disponíveis no documento acadêmico entregue na Primeira Etapa, com base em fontes oficiais como INEP, MEC, IBGE e UNESCO.
   
