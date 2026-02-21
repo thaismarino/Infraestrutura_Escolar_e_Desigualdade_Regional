@@ -1,4 +1,4 @@
-# Análise da infraestrutura escolar e das desigualdades regionais no Brasil com base nos microdados do Censo Escolar 2024 
+# Análise da infraestrutura escolar e das desigualdades regionais no Brasil com base nos microdados do Censo Escolar 2024
 
 ## Projeto Integrador: Apoio Decisório aos Negócios 
 O projeto tem como foco a análise de **infraestrutura escolar e desigualdade regional** no Brasil, utilizando os **microdados do Censo Escolar da Educação Básica 2024 (INEP)** como base para apoiar a tomada de decisão e a formulação de políticas públicas educacionais.
