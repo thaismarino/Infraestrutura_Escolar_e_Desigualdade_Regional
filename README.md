@@ -1,35 +1,53 @@
 # Consultas OLAP e Análises
 
-Esta etapa do projeto é responsável pela construção das consultas OLAP, modelagem análitica e geração de análises estratégicas a partir do dados do Censo Escolar 2024. 
+Esta etapa do projeto é responsável pela construção das consultas OLAP, modelagem analítica e geração de análises estratégicas a partir dos dados do Censo Escolar 2024. 
 
-O foco está na análise de desigualdades educacionais com base em: 
+O foco está na análise de desigualdades educacionais com base em:
+
 - Região
 - Dependência administrativa
 - Localização urbana/rural
-- Infraestutura básica
+- Infraestrutura básica
 - Conectividade
 
-## Base Utilizada
+---
 
-Os dados utilizados nesta etapa foram organizados em duas camadas:
+## Organização das Camadas de Dados
 
-### Arquivo Original 
+Para garantir rastreabilidade e organização metodológica, os dados foram estruturados em camadas:
 
-microdados_ed_basica_2024.csv
-Arquivo bruto contendo todas as variáveis do microdado do Censo Escolar 2024.
+### Camada Raw
 
-### Arquivo Filtrado 
+Arquivo original:
 
-microdados_ed_basica_2024_filtrado.csv
-Arquivo derivado contendo apenas as variáveis necessárias ao escopo da etapa de OLAP.
+`microdados_ed_basica_2024.csv`
+
+Arquivo bruto contendo todas as variáveis do microdado oficial do Censo Escolar 2024 (INEP).  
+O arquivo raw não foi versionado no repositório devido ao tamanho.
+
+### Camada Processed
+
+Arquivo derivado:
+
+`microdados_ed_basica_2024_filtrado.csv`
+
+Arquivo contendo apenas as variáveis necessárias ao escopo analítico da etapa de OLAP.
 
 ### Base Relacional
 
-A partir do arquivo filtrado, foi criado no MySQL a tabela:
-microdados_ed_basica
+A partir do arquivo filtrado, foi criada no MySQL a tabela:
 
-Essa tabela serve como base para as consultas OLAP e geração dos indicadores analíticos. 
+`microdados_ed_basica`
 
+Essa tabela serve como base estruturada para a construção das consultas OLAP e geração dos indicadores analíticos.
 
+### Dicionário de Dados
+
+Foi elaborado um dicionário específico para o dataset filtrado, contendo:
+
+- Tipo conceitual das variáveis  
+- Domínio de valores  
+- Descrição analítica  
+- Origem dos dados  
 
   
