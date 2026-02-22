@@ -116,3 +116,18 @@ Esse resultado indica que os alunos tendem a estar concentrados em unidades com 
 Entretanto, o cenário é distinto no indicador de esgotamento sanitário. A Região Norte apresenta apenas 24,62% das matrículas em escolas com acesso à rede pública de esgoto, enquanto o Sudeste atinge 93,97%. A diferença expressiva demonstra que, sob a perspectiva do estudante, a desigualdade estrutural permanece significativa, especialmente nas regiões com menor cobertura sanitária.
 
 A análise ponderada por matrículas permite avaliar não apenas a distribuição de infraestrutura entre escolas, mas também o potencial impacto dessas condições sobre o conjunto de alunos atendidos.
+
+## 8) Impacto por Matrículas (Dependência Administrativa)
+
+### Evidência (resultado no DBeaver)
+![Matrículas por Dependência](analises/img/08_matriculas_por_dependencia.png)
+
+### Interpretação
+
+Ao considerar o volume de matrículas, observa-se que o acesso à internet atinge níveis elevados em todas as dependências administrativas, superando 97% nas redes estadual e municipal e alcançando praticamente universalização nas redes federal e privada.
+
+Esse resultado indica que, sob a perspectiva do aluno, o acesso à conectividade encontra-se amplamente disseminado, mesmo nas redes com menor infraestrutura média quando analisadas por número de escolas.
+
+Entretanto, a análise do esgotamento sanitário revela disparidades mais relevantes. A rede municipal apresenta 60,85% das matrículas em escolas com acesso à rede pública de esgoto, percentual inferior ao observado nas redes estadual (74,02%) e privada (90,85%).
+
+Os dados sugerem que, embora a conectividade digital esteja relativamente distribuída entre as redes, os déficits estruturais de saneamento permanecem concentrados principalmente na rede municipal, que atende o maior contingente de alunos.
