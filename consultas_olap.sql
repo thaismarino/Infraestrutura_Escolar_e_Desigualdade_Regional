@@ -78,3 +78,21 @@ SELECT
 FROM microdados_ed_basica
 GROUP BY TP_LOCALIZACAO
 ORDER BY TP_LOCALIZACAO;
+
+-- 7) Impacto por matrícula: % de matrículas em escolas com internet e com esgoto de rede (por região)
+-- Métrica: soma de QT_MAT_BAS nas escolas com o recurso / soma total de QT_MAT_BAS na região
+
+SELECT
+  NO_REGIAO,
+  SUM(QT_MAT_BAS) AS total_matriculas,
+  ROUND(
+    SUM(CASE WHEN IN_INTERNET = 1 THEN QT_MAT_BAS ELSE 0 END) / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    2
+  ) AS pct_matriculas_em_escolas_com_internet,
+  ROUND(
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN QT_MAT_BAS ELSE 0 END) / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    2
+  ) AS pct_matriculas_em_escolas_com_esgoto_rede
+FROM microdados_ed_basica
+GROUP BY NO_REGIAO
+ORDER BY pct_matriculas_em_escolas_com_internet DESC;
