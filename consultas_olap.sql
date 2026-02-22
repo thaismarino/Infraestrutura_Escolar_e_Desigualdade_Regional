@@ -96,3 +96,21 @@ SELECT
 FROM microdados_ed_basica
 GROUP BY NO_REGIAO
 ORDER BY pct_matriculas_em_escolas_com_internet DESC;
+
+-- 8) Impacto por matrícula: dependência administrativa
+-- Métrica: % das matrículas em escolas com internet e esgoto de rede
+
+SELECT
+  TP_DEPENDENCIA,
+  SUM(QT_MAT_BAS) AS total_matriculas,
+  ROUND(
+    SUM(CASE WHEN IN_INTERNET = 1 THEN QT_MAT_BAS ELSE 0 END) / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    2
+  ) AS pct_matriculas_com_internet,
+  ROUND(
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN QT_MAT_BAS ELSE 0 END) / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    2
+  ) AS pct_matriculas_com_esgoto_rede
+FROM microdados_ed_basica
+GROUP BY TP_DEPENDENCIA
+ORDER BY TP_DEPENDENCIA;
