@@ -114,3 +114,18 @@ SELECT
 FROM microdados_ed_basica
 GROUP BY TP_DEPENDENCIA
 ORDER BY TP_DEPENDENCIA;
+
+-- 9) Pressão de infraestrutura: matrículas por sala por região
+-- Métrica: total de matrículas / total de salas utilizadas
+
+SELECT
+  NO_REGIAO,
+  SUM(QT_MAT_BAS) AS total_matriculas,
+  SUM(QT_SALAS_UTILIZADAS) AS total_salas,
+  ROUND(
+    SUM(QT_MAT_BAS) / NULLIF(SUM(QT_SALAS_UTILIZADAS),0),
+    2
+  ) AS matriculas_por_sala
+FROM microdados_ed_basica
+GROUP BY NO_REGIAO
+ORDER BY matriculas_por_sala DESC;
