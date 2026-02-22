@@ -55,7 +55,6 @@ As escolas estaduais apresentam desempenho intermediário, enquanto as escolas m
 
 Observa-se que o esgotamento sanitário permanece como o principal gargalo estrutural em todas as dependências administrativas.
 
-O esgotamento sanitário mantém-se como o indicador mais crítico entre as dependências administrativas analisadas.
 
 ## 4) Conectividade por Dependência Administrativa
 
@@ -113,7 +112,7 @@ A magnitude das diferenças evidencia que as condições materiais mínimas de f
 
 Ao considerar o peso das matrículas, observa-se que a proporção de alunos matriculados em escolas com acesso à internet é elevada na maior parte das regiões, superando 97% no Centro-Oeste, Sul, Sudeste e Nordeste. Mesmo no Norte, o percentual atinge 86,59%, valor superior ao observado quando a métrica considera apenas o número de escolas.
 
-Esse resultado indica que os alunos tendem a estar concentrados em unidades com melhor estrutura de conectividade, reduzindo parcialmente o impacto da desigualdade quando a análise é ponderada pelo volume de matrículas.
+Esse resultado indica que as matrículas encontram-se concentradas em escolas com acesso à internet, reduzindo parcialmente o impacto da desigualdade quando a análise é ponderada pelo volume de alunos.
 
 Entretanto, o cenário é distinto no indicador de esgotamento sanitário. A Região Norte apresenta apenas 24,62% das matrículas em escolas com acesso à rede pública de esgoto, enquanto o Sudeste atinge 93,97%. A diferença expressiva demonstra que, sob a perspectiva do estudante, a desigualdade estrutural permanece significativa, especialmente nas regiões com menor cobertura sanitária.
 
@@ -128,7 +127,7 @@ A análise ponderada por matrículas permite avaliar não apenas a distribuiçã
 
 Ao considerar o volume de matrículas, observa-se que o acesso à internet atinge níveis elevados em todas as dependências administrativas, superando 97% nas redes estadual e municipal e alcançando praticamente universalização nas redes federal e privada.
 
-Esse resultado indica que, sob a perspectiva do aluno, o acesso à conectividade encontra-se amplamente disseminado, mesmo nas redes com menor infraestrutura média quando analisadas por número de escolas.
+Esse resultado indica que, sob a perspectiva do aluno, apresenta elevada cobertura sob a perspectiva das matrículas, mesmo nas redes com menor infraestrutura média quando analisadas por número de escolas.
 
 Entretanto, a análise do esgotamento sanitário revela disparidades mais relevantes. A rede municipal apresenta 60,85% das matrículas em escolas com acesso à rede pública de esgoto, percentual inferior ao observado nas redes estadual (74,02%) e privada (90,85%).
 
@@ -145,7 +144,7 @@ A análise da razão entre matrículas e salas utilizadas indica diferenças na 
 
 A Região Norte apresenta a maior média, com 33,49 matrículas por sala, enquanto a Região Sul registra o menor valor, com 25,65.
 
-A diferença observada sugere maior concentração de alunos por espaço físico nas regiões com menor infraestrutura consolidada, o que pode impactar diretamente as condições de ensino e a qualidade do ambiente escolar.
+A diferença observada sugere maior concentração de alunos por espaço físico nas regiões com menor infraestrutura consolidada, pode indicar maior pressão sobre a infraestrutura física das unidades escolares e a qualidade do ambiente escolar.
 
 Os dados indicam que a desigualdade educacional não se manifesta apenas na disponibilidade de serviços e conectividade, mas também na capacidade física das unidades escolares.
 
