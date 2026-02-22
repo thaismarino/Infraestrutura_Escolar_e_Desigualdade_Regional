@@ -131,3 +131,18 @@ Esse resultado indica que, sob a perspectiva do aluno, o acesso à conectividade
 Entretanto, a análise do esgotamento sanitário revela disparidades mais relevantes. A rede municipal apresenta 60,85% das matrículas em escolas com acesso à rede pública de esgoto, percentual inferior ao observado nas redes estadual (74,02%) e privada (90,85%).
 
 Os dados sugerem que, embora a conectividade digital esteja relativamente distribuída entre as redes, os déficits estruturais de saneamento permanecem concentrados principalmente na rede municipal, que atende o maior contingente de alunos.
+
+## 9) Pressão de Infraestrutura: Matrículas por Sala (Região)
+
+### Evidência (resultado no DBeaver)
+![Matrículas por Sala por Região](analises/img/09_matriculas_por_sala_por_regiao.png)
+
+### Interpretação
+
+A análise da razão entre matrículas e salas utilizadas indica diferenças na pressão estrutural das unidades escolares entre as regiões.
+
+A Região Norte apresenta a maior média, com 33,49 matrículas por sala, enquanto a Região Sul registra o menor valor, com 25,65.
+
+A diferença observada sugere maior concentração de alunos por espaço físico nas regiões com menor infraestrutura consolidada, o que pode impactar diretamente as condições de ensino e a qualidade do ambiente escolar.
+
+Os dados indicam que a desigualdade educacional não se manifesta apenas na disponibilidade de serviços e conectividade, mas também na capacidade física das unidades escolares.
