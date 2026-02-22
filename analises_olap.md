@@ -1,5 +1,7 @@
 # Análises OLAP
 
+As análises a seguir foram estruturadas em três eixos principais: território (região e localização), dependência administrativa e impacto ponderado por matrícula, permitindo avaliar desigualdades educacionais sob diferentes perspectivas estruturais.
+
 ## 1) Conectividade por Região (IN_INTERNET)
 
 ### Evidência (resultado no DBeaver)
