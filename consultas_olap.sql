@@ -53,3 +53,15 @@ SELECT
 FROM microdados_ed_basica
 GROUP BY TP_DEPENDENCIA
 ORDER BY TP_DEPENDENCIA;
+
+-- 5) Conectividade por localização (urbana/rural)
+
+SELECT
+  TP_LOCALIZACAO,
+  COUNT(*) AS total_escolas,
+  ROUND(SUM(CASE WHEN IN_INTERNET = 1 THEN 1 ELSE 0 END)/COUNT(*)*100, 2) AS pct_internet,
+  ROUND(SUM(CASE WHEN IN_BANDA_LARGA = 1 THEN 1 ELSE 0 END)/COUNT(*)*100, 2) AS pct_banda_larga,
+  ROUND(SUM(CASE WHEN TP_REDE_LOCAL IN (1,2,3) THEN 1 ELSE 0 END)/COUNT(*)*100, 2) AS pct_rede_local
+FROM microdados_ed_basica
+GROUP BY TP_LOCALIZACAO
+ORDER BY TP_LOCALIZACAO;
