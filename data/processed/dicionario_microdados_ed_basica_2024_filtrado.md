@@ -2,7 +2,7 @@
 
 microdados_ed_basica_2024_filtrado.csv 
 
-Este documento descreve as variáveis presentes no dataset filtrado utilizado na etapa de Consultas OLAP. 
+Este dicionário foi elaborado com base no microdado oficial do INEP, adaptado para a camada analítica do projeto. Os tipos descritos são conceituais (analíticos), não técnicos de banco de dados, com foco em apoiar consultas OLAP e construção de indicadores. 
 
 | Variável | Tipo (conceitual) | Descrição | Domínio / Valores | Origem |
 |---|---|---|---|---|
