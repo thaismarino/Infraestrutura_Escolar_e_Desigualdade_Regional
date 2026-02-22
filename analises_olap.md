@@ -13,7 +13,7 @@ As regiões Centro-Oeste e Sul apresentam percentuais superiores a 90% de conect
 
 Essa diferença sugere desigualdade estrutural na infraestrutura tecnológica educacional, possivelmente associada a fatores geográficos, econômicos e de investimento público.
 
-O resultado reforça a hipótese de que o acesso à conectividade escolar não ocorre de maneira homogênea no território nacional.
+O padrão observado confirma que a conectividade escolar apresenta distribuição territorial assimétrica, com maior consolidação nas regiões mais desenvolvidas.
 
 > Observação: A métrica foi calculada com base na proporção de escolas com IN_INTERNET = 1 em relação ao total de escolas por região.
 
@@ -34,7 +34,7 @@ Em contraste, Sul e Centro-Oeste registram os maiores percentuais de cobertura, 
 
 Observa-se que a energia elétrica é o serviço mais universalizado nacionalmente, enquanto o esgotamento sanitário configura o principal gargalo estrutural.
 
-Os resultados sugerem que as desigualdades regionais na educação não se restringem à conectividade digital, mas também envolvem condições físicas e sanitárias essenciais ao funcionamento escolar.
+Os dados indicam que as diferenças regionais observadas abrangem não apenas aspectos tecnológicos, mas também serviços básicos essenciais à estrutura física das escolas.
 
 ## 3) Infraestrutura por Dependência Administrativa
 
@@ -53,7 +53,7 @@ As escolas estaduais apresentam desempenho intermediário, enquanto as escolas m
 
 Observa-se que o esgotamento sanitário permanece como o principal gargalo estrutural em todas as dependências administrativas.
 
-Os resultados sugerem que a desigualdade de infraestrutura educacional não ocorre apenas entre regiões, mas também entre níveis de gestão e financiamento das escolas.
+O esgotamento sanitário mantém-se como o indicador mais crítico entre as dependências administrativas analisadas.
 
 ## 4) Conectividade por Dependência Administrativa
 
@@ -86,4 +86,19 @@ Enquanto 88,43% das escolas urbanas possuem acesso à internet, esse percentual 
 A desigualdade torna-se ainda mais acentuada quando observados os indicadores de qualidade da conectividade: apenas 41,51% das escolas rurais possuem banda larga, contra 80,08% nas áreas urbanas. O mesmo padrão é observado na presença de rede local estruturada (78,46% urbano vs. 41,15% rural).
 
 Os resultados indicam que a desigualdade digital no contexto educacional brasileiro está fortemente associada ao território, com maior vulnerabilidade nas áreas rurais, especialmente em relação à qualidade e estrutura da infraestrutura tecnológica disponível.
+
+## 6) Infraestrutura Básica por Localização (Urbana x Rural)
+
+### Evidência (resultado no DBeaver)
+![Infraestrutura por Localização](analises/img/06_infraestrutura_por_localizacao.png)
+
+### Interpretação
+
+A análise evidencia disparidade estrutural acentuada entre escolas urbanas e rurais nos indicadores de infraestrutura básica.
+
+Enquanto as escolas urbanas apresentam cobertura superior a 84% em abastecimento de água e quase 90% em energia elétrica e coleta de lixo, as escolas rurais registram percentuais significativamente inferiores, especialmente em esgotamento sanitário, onde apenas 6,56% possuem rede pública.
+
+A diferença superior a 60 pontos percentuais no acesso à rede pública de esgoto indica um déficit sanitário crítico nas áreas rurais.
+
+A magnitude das diferenças evidencia que as condições materiais mínimas de funcionamento escolar apresentam forte variação territorial, especialmente nas áreas rurais, onde os serviços sanitários configuram o principal ponto de fragilidade estrutural.
 
