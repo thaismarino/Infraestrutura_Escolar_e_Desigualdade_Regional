@@ -102,3 +102,17 @@ A diferença superior a 60 pontos percentuais no acesso à rede pública de esgo
 
 A magnitude das diferenças evidencia que as condições materiais mínimas de funcionamento escolar apresentam forte variação territorial, especialmente nas áreas rurais, onde os serviços sanitários configuram o principal ponto de fragilidade estrutural.
 
+## 7) Impacto por Matrículas (Região)
+
+### Evidência (resultado no DBeaver)
+![Matrículas em escolas com internet e esgoto por região](analises/img/07_matriculas_com_internet_esgoto_por_regiao.png)
+
+### Interpretação
+
+Ao considerar o peso das matrículas, observa-se que a proporção de alunos matriculados em escolas com acesso à internet é elevada na maior parte das regiões, superando 97% no Centro-Oeste, Sul, Sudeste e Nordeste. Mesmo no Norte, o percentual atinge 86,59%, valor superior ao observado quando a métrica considera apenas o número de escolas.
+
+Esse resultado indica que os alunos tendem a estar concentrados em unidades com melhor estrutura de conectividade, reduzindo parcialmente o impacto da desigualdade quando a análise é ponderada pelo volume de matrículas.
+
+Entretanto, o cenário é distinto no indicador de esgotamento sanitário. A Região Norte apresenta apenas 24,62% das matrículas em escolas com acesso à rede pública de esgoto, enquanto o Sudeste atinge 93,97%. A diferença expressiva demonstra que, sob a perspectiva do estudante, a desigualdade estrutural permanece significativa, especialmente nas regiões com menor cobertura sanitária.
+
+A análise ponderada por matrículas permite avaliar não apenas a distribuição de infraestrutura entre escolas, mas também o potencial impacto dessas condições sobre o conjunto de alunos atendidos.
