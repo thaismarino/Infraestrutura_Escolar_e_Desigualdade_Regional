@@ -147,3 +147,17 @@ SELECT
   ) AS pct_matriculas_rurais_com_agua
 FROM microdados_ed_basica
 WHERE TP_LOCALIZACAO = 2;
+
+-- 11) Percentual de escolas sem rede publica de esgoto por regiao
+
+SELECT
+  NO_REGIAO,
+  COUNT(*) AS total_escolas,
+  ROUND(
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 0 THEN 1 ELSE 0 END) 
+    / COUNT(*) * 100,
+    2
+  ) AS pct_escolas_sem_esgoto
+FROM microdados_ed_basica
+GROUP BY NO_REGIAO
+ORDER BY pct_escolas_sem_esgoto DESC;
