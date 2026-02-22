@@ -71,3 +71,19 @@ As escolas municipais apresentam os menores percentuais tanto de banda larga (63
 As escolas federais demonstram padrão de conectividade praticamente universalizado, com percentuais superiores a 95% em todos os indicadores digitais.
 
 Os resultados sugerem que a desigualdade digital envolve não apenas presença de conexão, mas também qualidade da infraestrutura tecnológica interna, o que pode impactar diretamente o uso pedagógico da tecnologia.
+
+## 5) Conectividade por Localização (Urbana x Rural)
+
+### Evidência (resultado no DBeaver)
+![Conectividade por Localização](analises/img/05_conectividade_por_localizacao.png)
+
+### Interpretação
+
+A análise evidencia uma disparidade expressiva entre escolas urbanas e rurais no que se refere à conectividade digital.
+
+Enquanto 88,43% das escolas urbanas possuem acesso à internet, esse percentual cai para 54,91% nas escolas rurais, configurando diferença superior a 30 pontos percentuais.
+
+A desigualdade torna-se ainda mais acentuada quando observados os indicadores de qualidade da conectividade: apenas 41,51% das escolas rurais possuem banda larga, contra 80,08% nas áreas urbanas. O mesmo padrão é observado na presença de rede local estruturada (78,46% urbano vs. 41,15% rural).
+
+Os resultados indicam que a desigualdade digital no contexto educacional brasileiro está fortemente associada ao território, com maior vulnerabilidade nas áreas rurais, especialmente em relação à qualidade e estrutura da infraestrutura tecnológica disponível.
+
