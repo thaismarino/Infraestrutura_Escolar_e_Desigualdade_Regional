@@ -161,3 +161,18 @@ A análise específica das escolas rurais evidencia um cenário de vulnerabilida
 Embora o universo analisado compreenda mais de cinco milhões de matrículas em áreas rurais, apenas 13,86% dos alunos estão matriculados em escolas com acesso à rede pública de esgoto. No caso do abastecimento de água via rede pública, o percentual atinge 48,28%.
 
 Os dados indicam que a maioria dos estudantes da zona rural está inserida em unidades escolares sem cobertura adequada de serviços sanitários básicos, revelando um déficit estrutural que ultrapassa a dimensão tecnológica e alcança condições essenciais de salubridade e funcionamento escolar.
+
+## 11) Percentual de Escolas sem Rede Pública de Esgoto (Região)
+
+### Evidência (resultado no DBeaver)
+![Escolas sem esgoto por região](analises/img/11_escolas_sem_esgoto_por_regiao.png)
+
+### Interpretação
+
+A análise evidencia disparidade expressiva na cobertura de esgotamento sanitário entre as regiões brasileiras.
+
+Na Região Norte, 76,17% das escolas não possuem acesso à rede pública de esgoto, percentual significativamente superior ao observado no Sudeste, onde apenas 8,72% das unidades encontram-se nessa condição.
+
+O contraste regional demonstra concentração do déficit sanitário nas regiões Norte e Nordeste, reforçando a existência de assimetria estrutural na infraestrutura escolar.
+
+A leitura do indicador sob a perspectiva da ausência do serviço torna mais evidente a magnitude do problema sanitário em determinadas regiões do país.
