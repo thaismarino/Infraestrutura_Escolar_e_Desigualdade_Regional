@@ -1,129 +1,106 @@
-# Análise da infraestrutura escolar e das desigualdades regionais no Brasil com base nos microdados do Censo Escolar 2024
+ Detalhamento Técnico do Processo ETL e Carga
+1️⃣ Estrutura da Base de Dados (DDL)
 
-## Projeto Integrador: Apoio Decisório aos Negócios 
-O projeto tem como foco a análise de **infraestrutura escolar e desigualdade regional** no Brasil, utilizando os **microdados do Censo Escolar da Educação Básica 2024 (INEP)** como base para apoiar a tomada de decisão e a formulação de políticas públicas educacionais.
+Tabela de Estágio – stg_escolas_2024
 
-### 👥 Integrantes do Grupo
-- [Bruno Costa Caiado](https://github.com/costacaiado)
-- [Felipe Augusto Santinho](https://github.com/felipe-santinho)
-- [Isabel Helena Hartmann](https://github.com/belhartmann)
-- [Paula Barros Ortiz](https://github.com/paulabortiz)
-- [Thais Oliveira dos Santos](https://github.com/thaismarino)
+Objetivo: Servir como camada intermediária (staging) para consolidar os microdados brutos antes de qualquer processamento analítico.
 
-### 👨‍🏫 Orientador
-- Gustavo Calixto
+Design técnico:
 
-## Tema do Projeto 
+Tipos de dados definidos explicitamente: INT para identificadores, VARCHAR para nomes e endereços, DATE para datas de referência.
 
-**Infraestrutura escolar e desigualdade regional**
-Análise das desigualdades na infraestrutura das escolas brasileiras, considerando diferenças regionais, dependência administrativa (pública e privada) e localização (urbana e rural).
+Restrições: PRIMARY KEY sobre o código da escola para garantir unicidade e evitar duplicidade na carga.
 
-## Objetivo Geral
+Indexação futura prevista para colunas de pesquisa frequente, como município e estado, visando performance em consultas analíticas.
 
-Analisar as desigualdades regionais na infraestrutura das escolas brasileiras por meio dos microdados do Censo Escolar 2024, utilizando processos de **ETL (Extração, Transformação e Carga)** para a construção de indicadores comparativos que apoiem a tomada de decisão.
+Ferramenta: MySQL via DBeaver; script manual escrito em SQL.
 
-## Estrutura do Projeto
+Boas práticas: Definir DDL manualmente permite controle total sobre tipos, constraints e padrões de normalização.
 
-O projeto está dividido em **duas etapas principais**:
+2️⃣ Processo de Extração
 
-- **Primeira Etapa (Fase 1)** – Planejamento, modelagem analítica e definição do processo ETL  
-- **Segunda Etapa (Fase 2)** –
+Fonte: Microdados do Censo Escolar 2024 disponibilizados pelo INEP.
+Formato original: .CSV com separador ; e codificação latin-1.
 
-## Primeira Etapa
-## Planejamento e Modelagem
+Processo técnico:
 
-A Primeira Etapa teve caráter **conceitual e metodológico**, com foco na compreensão do problema de negócio, definição da base de dados e planejamento do processo analítico.
+Ferramenta: Python + Pandas.
 
-### Principais atividades realizadas
+Etapas executadas:
 
-- Definição do problema de apoio à decisão relacionado à desigualdade de infraestrutura escolar
-- Pesquisa e seleção da base de dados oficial (Censo Escolar 2024 – INEP)
-- Identificação e descrição das variáveis relevantes para a análise
-- Levantamento de perguntas de negócio e decisões possíveis a partir dos dados
-- Planejamento detalhado do processo de ETL
-- Definição conceitual de um **Índice Médio de Infraestrutura Escolar**
-- Escolha das ferramentas analíticas e de visualização
+Leitura seletiva das colunas relevantes (usecols em Pandas) para reduzir memória e aumentar velocidade de processamento.
 
-Nesta etapa, **não houve execução do ETL**, apenas o planejamento e a modelagem do processo.
+Conversão de codificação latin-1 para UTF-8 para compatibilidade com MySQL.
 
-## Fonte de Dados
+Tratamento preliminar de valores nulos (NaN) e tipos inconsistentes.
 
-- **Base:** Microdados do Censo Escolar da Educação Básica – 2024  
-- **Órgão responsável:** INEP (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira)  
-- **Formato:** CSV  
-- **Abrangência:** Nacional (escolas públicas e privadas)
+Justificativa técnica: Leitura programática permite automação, replicabilidade e redução de dados irrelevantes.
 
-Os dados permitem análises comparativas por:
-- Região
-- Unidade Federativa
-- Dependência administrativa
-- Localização (urbana e rural)
-- Condições de infraestrutura física e tecnológica
+3️⃣ Processo de Transformação
 
-## Planejamento do Processo ETL
+Etapas detalhadas:
 
-O processo de ETL foi planejado em três etapas:
+Filtragem de Variáveis: Apenas colunas relacionadas a localização (UF, município, distrito) e infraestrutura (laboratórios, quadras, bibliotecas).
 
-### Extração
-- Download e leitura dos microdados do Censo Escolar 2024
-- Seleção do arquivo referente às escolas
-- Garantia da integridade e consistência dos dados originais
+Padronização de Dados:
 
-### Transformação
-- Limpeza e padronização das variáveis
-- Tratamento de valores ausentes e inconsistências
-- Recodificação de variáveis binárias
-- Criação do Índice Médio de Infraestrutura Escolar
+Conversão automática de tipos (astype) para corresponder à DDL.
 
-### Carga
-- Armazenamento da base tratada em formato adequado para análise
-- Preparação para uso em ferramentas de visualização e análise estatística
+Normalização de strings: remoção de espaços, padronização de acentuação.
 
-## Ferramentas Planejadas
+Conversão de datas e valores numéricos inconsistentes.
 
-- **Python** (Pandas, NumPy) – tratamento e transformação dos dados  
-- **Power BI** – visualização e análise comparativa  
-- **Excel** – validação e conferência dos dados
+Preparação para Carga:
 
-## Perguntas de Negócio
+Organização em DataFrame alinhado à ordem das colunas da tabela stg_escolas_2024.
 
-Algumas das perguntas que o projeto se propõe a responder:
+Divisão em batches (chunksize) para evitar sobrecarga de memória e garantir performance na carga de grandes volumes.
 
-- Quais regiões apresentam as piores condições de infraestrutura escolar?
-- Quais diferenças existem entre escolas públicas e privadas?
-- Como a localização urbana ou rural impacta a infraestrutura disponível?
-- Quais itens de infraestrutura são mais críticos no cenário nacional?
-- Onde os investimentos públicos devem ser priorizados?
+Boas práticas: Transformações aplicadas antes da carga garantem consistência, evitando correções posteriores na base relacional.
 
-## Organização da Equipe - Primeira Etapa
+4️⃣ Processo de Carga (DML)
 
-A divisão das atividades na Primeira Etapa foi realizada da seguinte forma:
+Automação com Python + SQLAlchemy:
 
-- **Isabel Helena Hartmann**  
-  Introdução, contextualização do tema e definição dos objetivos.
+Método: DataFrame.to_sql() com if_exists='append' e chunksize=1000.
 
-- **Felipe Augusto Santinho**  
-  Pesquisa, escolha da base de dados, descrição das variáveis e justificativa da fonte de dados.
+Execução técnica:
 
-- **Bruno Costa Caiado**  
-  Análise das atividades de apoio à decisão, possibilidades analíticas e decisões possíveis.
+Cada chunk de 1000 registros gera comandos INSERT otimizados.
 
-- **Thais Oliveira dos Santos**  
-  Planejamento do processo ETL, detalhando as etapas de extração, transformação e carga dos dados.
+Transações controladas para evitar inserção parcial em caso de falha.
 
-- **Paula Barros Ortiz**  
-  Revisão conforme normas ABNT, elaboração da conclusão e organização das referências bibliográficas.
+Performance e escalabilidade:
 
-## Segunda Etapa – Implantação da Solução (Em desenvolvimento)
+Uso de batch insert reduz overhead de comunicação com o banco.
 
-A Segunda Etapa do projeto contempla a implantação da solução proposta na fase inicial,
-incluindo a definição das tecnologias utilizadas, o detalhamento técnico do processo de ETL,
-a execução da carga dos dados e a realização de operações analíticas (OLAP) para apoio à
-tomada de decisão.
+SQLAlchemy abstrai detalhes de conexão e transações, garantindo portabilidade e confiabilidade.
 
-As entregas desta etapa serão adicionadas gradualmente a este repositório.
+Justificativa: Automatização diminui erro humano e permite replicação para futuras cargas.
 
-## Referências
+5️⃣ Validação da Base Populada
 
-As referências utilizadas estão disponíveis no documento acadêmico entregue na Primeira Etapa, com base em fontes oficiais como INEP, MEC, IBGE e UNESCO.
+Ferramenta: DBeaver + consultas SQL.
+
+Procedimentos:
+
+Verificação de contagem de registros:
+
+SELECT COUNT(*) FROM stg_escolas_2024;
+
+Validação de integridade:
+
+Checagem de nulos em colunas críticas (municipio, codigo_escola).
+
+Comparação com contagem de registros originais do CSV.
+
+Boas práticas: Garantir que a carga esteja completa antes de disponibilizar para análises estratégicas evita inconsistências futuras.
+
+6️⃣ Observações Técnicas Avançadas
+
+Logs de ETL: Sugere-se implementar logging detalhado em Python para registrar quantidade de registros processados, tempo de execução e eventuais erros.
+
+Monitoramento de performance: Indexar colunas frequentemente consultadas para acelerar relatórios analíticos.
+
+Manutenção: Criar procedimentos para atualização incremental do Censo, evitando recarga completa sempre que possível.
   
