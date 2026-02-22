@@ -129,3 +129,21 @@ SELECT
 FROM microdados_ed_basica
 GROUP BY NO_REGIAO
 ORDER BY matriculas_por_sala DESC;
+
+-- 10) Impacto por matrícula nas escolas rurais (infraestrutura básica)
+
+SELECT
+  COUNT(*) AS total_escolas_rurais,
+  SUM(QT_MAT_BAS) AS total_matriculas_rurais,
+  ROUND(
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN QT_MAT_BAS ELSE 0 END) 
+    / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    2
+  ) AS pct_matriculas_rurais_com_esgoto,
+  ROUND(
+    SUM(CASE WHEN IN_AGUA_REDE_PUBLICA = 1 THEN QT_MAT_BAS ELSE 0 END) 
+    / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    2
+  ) AS pct_matriculas_rurais_com_agua
+FROM microdados_ed_basica
+WHERE TP_LOCALIZACAO = 2;
