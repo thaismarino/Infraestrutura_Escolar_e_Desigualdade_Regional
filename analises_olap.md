@@ -54,3 +54,20 @@ As escolas estaduais apresentam desempenho intermediário, enquanto as escolas m
 Observa-se que o esgotamento sanitário permanece como o principal gargalo estrutural em todas as dependências administrativas.
 
 Os resultados sugerem que a desigualdade de infraestrutura educacional não ocorre apenas entre regiões, mas também entre níveis de gestão e financiamento das escolas.
+
+## 4) Conectividade por Dependência Administrativa
+
+### Evidência (resultado no DBeaver)
+![Conectividade por Dependência](analises/img/04_conectividade_por_dependencia.png)
+
+### Interpretação
+
+A análise destaca que a desigualdade digital nas escolas brasileiras apresenta forte relação com a dependência administrativa.
+
+Embora o acesso básico à internet esteja relativamente disseminado nas redes estadual, municipal e privada, observa-se diferença mais acentuada quando o indicador é banda larga e presença de rede local estruturada.
+
+As escolas municipais apresentam os menores percentuais tanto de banda larga (63,25%) quanto de rede local (61,93%), indicando que o desafio não está apenas no acesso à internet, mas na qualidade e estrutura da conectividade disponível.
+
+As escolas federais demonstram padrão de conectividade praticamente universalizado, com percentuais superiores a 95% em todos os indicadores digitais.
+
+Os resultados sugerem que a desigualdade digital envolve não apenas presença de conexão, mas também qualidade da infraestrutura tecnológica interna, o que pode impactar diretamente o uso pedagógico da tecnologia.
