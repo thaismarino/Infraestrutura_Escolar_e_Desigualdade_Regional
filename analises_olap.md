@@ -35,3 +35,22 @@ Em contraste, Sul e Centro-Oeste registram os maiores percentuais de cobertura, 
 Observa-se que a energia elétrica é o serviço mais universalizado nacionalmente, enquanto o esgotamento sanitário configura o principal gargalo estrutural.
 
 Os resultados sugerem que as desigualdades regionais na educação não se restringem à conectividade digital, mas também envolvem condições físicas e sanitárias essenciais ao funcionamento escolar.
+
+## 3) Infraestrutura por Dependência Administrativa
+
+### Evidência (resultado no DBeaver)
+![Infraestrutura por Dependência](analises/img/03_infraestrutura_por_dependencia.png)
+
+### Interpretação
+
+A análise revela desigualdade significativa de infraestrutura conforme a dependência administrativa.
+
+As escolas federais apresentam os maiores percentuais de cobertura em praticamente todos os indicadores, com destaque para energia elétrica (97,65%) e acesso à internet (97,79%), indicando infraestrutura amplamente consolidada.
+
+As escolas privadas também apresentam desempenho elevado e consistente, especialmente no acesso à rede pública de esgoto (73,31%), superior às redes estadual e municipal.
+
+As escolas estaduais apresentam desempenho intermediário, enquanto as escolas municipais, que concentram o maior número absoluto de unidades (128.999), registram os menores percentuais em todos os indicadores analisados, especialmente em esgotamento sanitário (36,87%) e abastecimento de água (57,67%).
+
+Observa-se que o esgotamento sanitário permanece como o principal gargalo estrutural em todas as dependências administrativas.
+
+Os resultados sugerem que a desigualdade de infraestrutura educacional não ocorre apenas entre regiões, mas também entre níveis de gestão e financiamento das escolas.
