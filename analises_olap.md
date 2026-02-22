@@ -148,3 +148,16 @@ A Região Norte apresenta a maior média, com 33,49 matrículas por sala, enquan
 A diferença observada sugere maior concentração de alunos por espaço físico nas regiões com menor infraestrutura consolidada, o que pode impactar diretamente as condições de ensino e a qualidade do ambiente escolar.
 
 Os dados indicam que a desigualdade educacional não se manifesta apenas na disponibilidade de serviços e conectividade, mas também na capacidade física das unidades escolares.
+
+## 10) Impacto Estrutural nas Escolas Rurais
+
+### Evidência (resultado no DBeaver)
+![Impacto estrutural nas escolas rurais](analises/img/10_matriculas_rurais_infraestrutura.png)
+
+### Interpretação
+
+A análise específica das escolas rurais evidencia um cenário de vulnerabilidade estrutural significativa.
+
+Embora o universo analisado compreenda mais de cinco milhões de matrículas em áreas rurais, apenas 13,86% dos alunos estão matriculados em escolas com acesso à rede pública de esgoto. No caso do abastecimento de água via rede pública, o percentual atinge 48,28%.
+
+Os dados indicam que a maioria dos estudantes da zona rural está inserida em unidades escolares sem cobertura adequada de serviços sanitários básicos, revelando um déficit estrutural que ultrapassa a dimensão tecnológica e alcança condições essenciais de salubridade e funcionamento escolar.
