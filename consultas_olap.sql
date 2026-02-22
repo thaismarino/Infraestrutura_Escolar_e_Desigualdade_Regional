@@ -65,3 +65,16 @@ SELECT
 FROM microdados_ed_basica
 GROUP BY TP_LOCALIZACAO
 ORDER BY TP_LOCALIZACAO;
+
+-- 6) Infraestrutura básica por localização (urbana/rural)
+
+SELECT
+  TP_LOCALIZACAO,
+  COUNT(*) AS total_escolas,
+  ROUND(SUM(CASE WHEN IN_AGUA_REDE_PUBLICA = 1 THEN 1 ELSE 0 END)/COUNT(*)*100, 2) AS pct_agua_rede_publica,
+  ROUND(SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN 1 ELSE 0 END)/COUNT(*)*100, 2) AS pct_esgoto_rede_publica,
+  ROUND(SUM(CASE WHEN IN_ENERGIA_REDE_PUBLICA = 1 THEN 1 ELSE 0 END)/COUNT(*)*100, 2) AS pct_energia_rede_publica,
+  ROUND(SUM(CASE WHEN IN_LIXO_SERVICO_COLETA = 1 THEN 1 ELSE 0 END)/COUNT(*)*100, 2) AS pct_coleta_lixo
+FROM microdados_ed_basica
+GROUP BY TP_LOCALIZACAO
+ORDER BY TP_LOCALIZACAO;
