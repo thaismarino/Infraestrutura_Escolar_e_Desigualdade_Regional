@@ -48,6 +48,26 @@ Foi elaborado um dicionário específico para o dataset filtrado, contendo:
 - Tipo conceitual das variáveis  
 - Domínio de valores  
 - Descrição analítica  
-- Origem dos dados  
+- Origem dos dados
+
+---
+
+## Consultas Desenvolvidas
+
+Nesta etapa foram desenvolvidas consultas analíticas com foco na identificação de desigualdades estruturais na Educação Básica, contemplando:
+
+1. Conectividade por região  
+2. Infraestrutura básica por região  
+3. Infraestrutura por dependência administrativa  
+4. Conectividade por dependência administrativa  
+5. Conectividade por localização (urbana x rural)  
+6. Infraestrutura básica por localização  
+7. Impacto por matrículas (região)  
+8. Impacto por matrículas (dependência administrativa)  
+9. Pressão de infraestrutura (matrículas por sala)  
+10. Impacto estrutural nas escolas rurais  
+11. Percentual de escolas sem rede pública de esgoto por região  
+
+As consultas SQL encontram-se no arquivo `consultas_olap.sql`, e as análises interpretativas com evidências estão documentadas em `analises_olap.md`.
 
   
