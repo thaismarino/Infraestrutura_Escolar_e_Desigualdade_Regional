@@ -41,6 +41,18 @@ A partir do arquivo filtrado, foi criada no MySQL a tabela:
 
 Essa tabela serve como base estruturada para a construção das consultas OLAP e geração dos indicadores analíticos.
 
+### Arquitetura das Camadas
+
+A solução foi estruturada em duas camadas complementares:
+
+- **Camada Staging:** `stg_escolas_2024`  
+  Base intermediária criada no processo de ETL, contendo as variáveis iniciais selecionadas para tratamento e organização relacional.
+
+- **Camada Analítica:** `microdados_ed_basica`  
+  Base estruturada para suportar consultas OLAP, contendo variáveis adicionais necessárias à construção de indicadores e análises comparativas.
+
+A camada analítica foi construída a partir do microdado filtrado, garantindo maior abrangência para as operações analíticas desenvolvidas nesta etapa.
+
 ### Dicionário de Dados
 
 Foi elaborado um dicionário específico para o dataset filtrado, contendo:
