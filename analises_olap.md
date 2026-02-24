@@ -2,6 +2,8 @@
 
 As análises a seguir foram estruturadas em três eixos principais: território (região e localização), dependência administrativa e impacto ponderado por matrícula, permitindo avaliar desigualdades educacionais sob diferentes perspectivas estruturais.
 
+---
+
 ## 1) Conectividade por Região (IN_INTERNET)
 
 ### Evidência (resultado no DBeaver)
@@ -175,3 +177,12 @@ Na Região Norte, 76,17% das escolas não possuem acesso à rede pública de esg
 O contraste regional demonstra concentração do déficit sanitário nas regiões Norte e Nordeste, reforçando a existência de assimetria estrutural na infraestrutura escolar.
 
 A leitura do indicador sob a perspectiva da ausência do serviço torna mais evidente a magnitude do problema sanitário em determinadas regiões do país.
+
+---
+
+### Evidência (Power BI)
+
+![Conectividade por Região - Power BI](analises/img/01_conectividade_por_regiao_powerbi.png)
+
+O painel confirma os resultados obtidos na consulta SQL, evidenciando maior concentração de conectividade nas regiões Centro-Oeste e Sul, e menor cobertura na Região Norte.
+
