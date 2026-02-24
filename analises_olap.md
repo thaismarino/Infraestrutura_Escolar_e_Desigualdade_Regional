@@ -186,3 +186,9 @@ A leitura do indicador sob a perspectiva da ausência do serviço torna mais evi
 
 O painel confirma os resultados obtidos na consulta SQL, evidenciando maior concentração de conectividade nas regiões Centro-Oeste e Sul, e menor cobertura na Região Norte.
 
+### Evidência Visual (Power BI)
+
+![Infraestrutura básica por Região - Power BI](analises/img/02_infraestrutura_basica_por_regiao_powerbi.png)
+
+O gráfico confirma os percentuais obtidos via SQL e facilita a comparação direta entre os serviços por região, destacando o esgotamento sanitário como principal gargalo.
+
