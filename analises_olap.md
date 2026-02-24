@@ -21,6 +21,7 @@ O padrão observado confirma que a conectividade escolar apresenta distribuiçã
 
 > Observação: A métrica foi calculada com base na proporção de escolas com IN_INTERNET = 1 em relação ao total de escolas por região.
 
+
 ### Evidência (Power BI) - Consulta 1
 
 ![Conectividade por Região - Power BI](analises/img/01_conectividade_por_regiao_powerbi.png)
@@ -48,6 +49,7 @@ Observa-se que a energia elétrica é o serviço mais universalizado nacionalmen
 
 Os dados indicam que as diferenças regionais observadas abrangem não apenas aspectos tecnológicos, mas também serviços básicos essenciais à estrutura física das escolas.
 
+
 ### Evidência Visual (Power BI) - Consulta 2 
 
 ![Infraestrutura básica por Região - Power BI](analises/img/02_infraestrutura_basica_por_regiao_powerbi.png)
@@ -72,6 +74,7 @@ As escolas privadas também apresentam desempenho elevado e consistente, especia
 As escolas estaduais apresentam desempenho intermediário, enquanto as escolas municipais, que concentram o maior número absoluto de unidades (128.999), registram os menores percentuais em todos os indicadores analisados, especialmente em esgotamento sanitário (36,87%) e abastecimento de água (57,67%).
 
 Observa-se que o esgotamento sanitário permanece como o principal gargalo estrutural em todas as dependências administrativas.
+
 
 ### Evidência Visual (Power BI) - Consulta 3 
 
@@ -98,11 +101,14 @@ As escolas federais demonstram padrão de conectividade praticamente universaliz
 
 Os resultados sugerem que a desigualdade digital envolve não apenas presença de conexão, mas também qualidade da infraestrutura tecnológica interna, o que pode impactar diretamente o uso pedagógico da tecnologia.
 
+
 ### Evidência Visual (Power BI) - Consulta 4
 
 ![Conectividade por Dependência - Power BI](analises/img/04_conectividade_por_dependencia_powerbi.png)
 
 O gráfico confirma os percentuais obtidos via SQL e evidencia diferenças mais acentuadas na qualidade da conectividade (banda larga e rede local) do que no simples acesso à internet.
+
+--- 
 
 ## 5) Conectividade por Localização (Urbana x Rural)
 
@@ -118,6 +124,15 @@ Enquanto 88,43% das escolas urbanas possuem acesso à internet, esse percentual 
 A desigualdade torna-se ainda mais acentuada quando observados os indicadores de qualidade da conectividade: apenas 41,51% das escolas rurais possuem banda larga, contra 80,08% nas áreas urbanas. O mesmo padrão é observado na presença de rede local estruturada (78,46% urbano vs. 41,15% rural).
 
 Os resultados indicam que a desigualdade digital no contexto educacional brasileiro está fortemente associada ao território, com maior vulnerabilidade nas áreas rurais, especialmente em relação à qualidade e estrutura da infraestrutura tecnológica disponível.
+
+
+### Evidência Visual (Power BI) - Consulta 5
+
+![Conectividade por Localização - Power BI](analises/img/05_conectividade_por_localizacao_powerbi.png)
+
+A visualização confirma a diferença significativa entre escolas urbanas e rurais, especialmente nos indicadores de banda larga e rede local, evidenciando maior vulnerabilidade estrutural nas áreas rurais.
+
+---
 
 ## 6) Infraestrutura Básica por Localização (Urbana x Rural)
 
