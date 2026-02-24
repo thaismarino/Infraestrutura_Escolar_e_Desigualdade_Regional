@@ -21,6 +21,14 @@ O padrão observado confirma que a conectividade escolar apresenta distribuiçã
 
 > Observação: A métrica foi calculada com base na proporção de escolas com IN_INTERNET = 1 em relação ao total de escolas por região.
 
+### Evidência (Power BI) - Consulta 1
+
+![Conectividade por Região - Power BI](analises/img/01_conectividade_por_regiao_powerbi.png)
+
+O painel confirma os resultados obtidos na consulta SQL, evidenciando maior concentração de conectividade nas regiões Centro-Oeste e Sul, e menor cobertura na Região Norte.
+
+---
+
 ## 2) Infraestrutura básica por Região
 
 ### Evidência (resultado no DBeaver)
@@ -40,6 +48,14 @@ Observa-se que a energia elétrica é o serviço mais universalizado nacionalmen
 
 Os dados indicam que as diferenças regionais observadas abrangem não apenas aspectos tecnológicos, mas também serviços básicos essenciais à estrutura física das escolas.
 
+### Evidência Visual (Power BI) - Consulta 2 
+
+![Infraestrutura básica por Região - Power BI](analises/img/02_infraestrutura_basica_por_regiao_powerbi.png)
+
+O gráfico confirma os percentuais obtidos via SQL e facilita a comparação direta entre os serviços por região, destacando o esgotamento sanitário como principal gargalo.
+
+---
+
 ## 3) Infraestrutura por Dependência Administrativa
 
 ### Evidência (resultado no DBeaver)
@@ -57,6 +73,13 @@ As escolas estaduais apresentam desempenho intermediário, enquanto as escolas m
 
 Observa-se que o esgotamento sanitário permanece como o principal gargalo estrutural em todas as dependências administrativas.
 
+### Evidência Visual (Power BI) - Consulta 3 
+
+![Infraestrutura por Dependência - Power BI](analises/img/03_infraestrutura_por_dependencia_powerbi.png)
+
+A visualização confirma as diferenças por dependência administrativa e reforça o contraste entre redes federal/privada e municipal, sobretudo em esgotamento sanitário.
+
+---
 
 ## 4) Conectividade por Dependência Administrativa
 
@@ -74,6 +97,12 @@ As escolas municipais apresentam os menores percentuais tanto de banda larga (63
 As escolas federais demonstram padrão de conectividade praticamente universalizado, com percentuais superiores a 95% em todos os indicadores digitais.
 
 Os resultados sugerem que a desigualdade digital envolve não apenas presença de conexão, mas também qualidade da infraestrutura tecnológica interna, o que pode impactar diretamente o uso pedagógico da tecnologia.
+
+### Evidência Visual (Power BI) - Consulta 4
+
+![Conectividade por Dependência - Power BI](analises/img/04_conectividade_por_dependencia_powerbi.png)
+
+O gráfico confirma os percentuais obtidos via SQL e evidencia diferenças mais acentuadas na qualidade da conectividade (banda larga e rede local) do que no simples acesso à internet.
 
 ## 5) Conectividade por Localização (Urbana x Rural)
 
@@ -177,24 +206,3 @@ Na Região Norte, 76,17% das escolas não possuem acesso à rede pública de esg
 O contraste regional demonstra concentração do déficit sanitário nas regiões Norte e Nordeste, reforçando a existência de assimetria estrutural na infraestrutura escolar.
 
 A leitura do indicador sob a perspectiva da ausência do serviço torna mais evidente a magnitude do problema sanitário em determinadas regiões do país.
-
----
-
-### Evidência (Power BI) - Consulta 1
-
-![Conectividade por Região - Power BI](analises/img/01_conectividade_por_regiao_powerbi.png)
-
-O painel confirma os resultados obtidos na consulta SQL, evidenciando maior concentração de conectividade nas regiões Centro-Oeste e Sul, e menor cobertura na Região Norte.
-
-### Evidência Visual (Power BI) - Consulta 2 
-
-![Infraestrutura básica por Região - Power BI](analises/img/02_infraestrutura_basica_por_regiao_powerbi.png)
-
-O gráfico confirma os percentuais obtidos via SQL e facilita a comparação direta entre os serviços por região, destacando o esgotamento sanitário como principal gargalo.
-
-### Evidência Visual (Power BI) - Consulta 3 
-
-![Infraestrutura por Dependência - Power BI](analises/img/03_infraestrutura_por_dependencia_powerbi.png)
-
-A visualização confirma as diferenças por dependência administrativa e reforça o contraste entre redes federal/privada e municipal, sobretudo em esgotamento sanitário.
-
