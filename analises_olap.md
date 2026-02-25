@@ -149,6 +149,14 @@ A diferença superior a 60 pontos percentuais no acesso à rede pública de esgo
 
 A magnitude das diferenças evidencia que as condições materiais mínimas de funcionamento escolar apresentam forte variação territorial, especialmente nas áreas rurais, onde os serviços sanitários configuram o principal ponto de fragilidade estrutural.
 
+### Evidência Visual (Power BI)
+
+![Infraestrutura por Localização - Power BI](analises/img/06_infraestrutura_por_localizacao_powerbi.png)
+
+O gráfico confirma a diferença estrutural entre escolas urbanas e rurais, com maior déficit no esgotamento sanitário e demais serviços básicos nas áreas rurais.
+
+---
+
 ## 7) Impacto por Matrículas (Região)
 
 ### Evidência (resultado no DBeaver)
