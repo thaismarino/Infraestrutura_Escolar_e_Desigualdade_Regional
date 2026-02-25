@@ -256,8 +256,11 @@ A visualização consolida o recorte rural (TP_LOCALIZACAO = 2), evidenciando o 
 
 A análise evidencia disparidade expressiva na cobertura de esgotamento sanitário entre as regiões brasileiras.
 
-Na Região Norte, 76,17% das escolas não possuem acesso à rede pública de esgoto, percentual significativamente superior ao observado no Sudeste, onde apenas 8,72% das unidades encontram-se nessa condição.
+Na Região Norte, **86,45%** das escolas não possuem acesso à rede pública de esgoto, percentual significativamente superior ao observado no Sudeste, onde apenas **10,65%** das unidades encontram-se nessa condição.
 
-O contraste regional demonstra concentração do déficit sanitário nas regiões Norte e Nordeste, reforçando a existência de assimetria estrutural na infraestrutura escolar.
+O contraste regional demonstra forte concentração do déficit sanitário nas regiões Norte e Nordeste, reforçando a persistência de desigualdades estruturais na infraestrutura escolar brasileira.
 
-A leitura do indicador sob a perspectiva da ausência do serviço torna mais evidente a magnitude do problema sanitário em determinadas regiões do país.
+A leitura do indicador sob a perspectiva da ausência do serviço torna ainda mais evidente a magnitude da carência sanitária em determinadas regiões do país.
+
+> Observação: Os percentuais foram calculados considerando apenas escolas com informação válida (0 ou 1) para o indicador.
+
