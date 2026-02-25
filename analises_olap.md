@@ -239,6 +239,14 @@ Embora o universo analisado compreenda mais de cinco milhões de matrículas em 
 
 Os dados indicam que a maioria dos estudantes da zona rural está inserida em unidades escolares sem cobertura adequada de serviços sanitários básicos, revelando um déficit estrutural que ultrapassa a dimensão tecnológica e alcança condições essenciais de salubridade e funcionamento escolar.
 
+### Evidência Visual (Power BI) - Consulta 10
+
+![Impacto estrutural nas escolas rurais - Power BI](analises/img/10_impacto_estrutural_escolas_rurais_powerbi.png)
+
+A visualização consolida o recorte rural (TP_LOCALIZACAO = 2), evidenciando o baixo percentual de matrículas em escolas com rede pública de esgoto e a cobertura parcial de abastecimento de água.
+
+---
+
 ## 11) Percentual de Escolas sem Rede Pública de Esgoto (Região)
 
 ### Evidência (resultado no DBeaver)
