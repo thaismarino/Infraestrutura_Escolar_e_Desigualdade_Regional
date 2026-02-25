@@ -201,6 +201,8 @@ Os dados sugerem que, embora a conectividade digital esteja relativamente distri
 
 A análise ponderada por matrículas indica que a conectividade atinge percentuais elevados entre redes, mas os déficits de esgotamento sanitário permanecem mais concentrados, especialmente na rede municipal, que atende o maior contingente de alunos.
 
+---
+
 ## 9) Pressão de Infraestrutura: Matrículas por Sala (Região)
 
 ### Evidência (resultado no DBeaver)
@@ -215,6 +217,14 @@ A Região Norte apresenta a maior média, com 33,49 matrículas por sala, enquan
 A diferença observada sugere maior concentração de alunos por espaço físico nas regiões com menor infraestrutura consolidada, pode indicar maior pressão sobre a infraestrutura física das unidades escolares e a qualidade do ambiente escolar.
 
 Os dados indicam que a desigualdade educacional não se manifesta apenas na disponibilidade de serviços e conectividade, mas também na capacidade física das unidades escolares.
+
+### Evidência Visual (Power BI) - Consulta 9 
+
+![Matrículas por Sala por Região - Power BI](analises/img/09_matriculas_por_sala_por_regiao_powerbi.png)
+
+A razão entre matrículas e salas utilizadas evidencia diferenças na pressão estrutural entre regiões, indicando maior concentração de alunos por sala em regiões com menor infraestrutura consolidada.
+
+---
 
 ## 10) Impacto Estrutural nas Escolas Rurais
 
