@@ -149,7 +149,7 @@ A diferença superior a 60 pontos percentuais no acesso à rede pública de esgo
 
 A magnitude das diferenças evidencia que as condições materiais mínimas de funcionamento escolar apresentam forte variação territorial, especialmente nas áreas rurais, onde os serviços sanitários configuram o principal ponto de fragilidade estrutural.
 
-### Evidência Visual (Power BI)
+### Evidência Visual (Power BI) - Consulta 6 
 
 ![Infraestrutura por Localização - Power BI](analises/img/06_infraestrutura_por_localizacao_powerbi.png)
 
@@ -171,6 +171,12 @@ Esse resultado indica que as matrículas encontram-se concentradas em escolas co
 Entretanto, o cenário é distinto no indicador de esgotamento sanitário. A Região Norte apresenta apenas 24,62% das matrículas em escolas com acesso à rede pública de esgoto, enquanto o Sudeste atinge 93,97%. A diferença expressiva demonstra que, sob a perspectiva do estudante, a desigualdade estrutural permanece significativa, especialmente nas regiões com menor cobertura sanitária.
 
 A análise ponderada por matrículas permite avaliar não apenas a distribuição de infraestrutura entre escolas, mas também o potencial impacto dessas condições sobre o conjunto de alunos atendidos.
+
+### Evidência Visual (Power BI) - Consulta 7 
+
+![Impacto por Matrículas - Região - Power BI](analises/img/07_matriculas_internet_esgoto_por_regiao_powerbi.png)
+
+A visualização confirma a análise ponderada por matrículas, mostrando que a conectividade tende a concentrar alunos em escolas com melhor estrutura, enquanto o déficit de esgotamento sanitário permanece mais crítico em determinadas regiões.
 
 ## 8) Impacto por Matrículas (Dependência Administrativa)
 
