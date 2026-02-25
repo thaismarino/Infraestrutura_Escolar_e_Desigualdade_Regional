@@ -178,6 +178,8 @@ A análise ponderada por matrículas permite avaliar não apenas a distribuiçã
 
 A visualização confirma a análise ponderada por matrículas, mostrando que a conectividade tende a concentrar alunos em escolas com melhor estrutura, enquanto o déficit de esgotamento sanitário permanece mais crítico em determinadas regiões.
 
+---
+
 ## 8) Impacto por Matrículas (Dependência Administrativa)
 
 ### Evidência (resultado no DBeaver)
@@ -192,6 +194,12 @@ Esse resultado indica que, sob a perspectiva do aluno, apresenta elevada cobertu
 Entretanto, a análise do esgotamento sanitário revela disparidades mais relevantes. A rede municipal apresenta 60,85% das matrículas em escolas com acesso à rede pública de esgoto, percentual inferior ao observado nas redes estadual (74,02%) e privada (90,85%).
 
 Os dados sugerem que, embora a conectividade digital esteja relativamente distribuída entre as redes, os déficits estruturais de saneamento permanecem concentrados principalmente na rede municipal, que atende o maior contingente de alunos.
+
+### Evidência Visual (Power BI) - Consulta 8 
+
+![Impacto por Matrículas - Dependência - Power BI](analises/img/08_matriculas_internet_esgoto_por_dependencia_powerbi.png)
+
+A análise ponderada por matrículas indica que a conectividade atinge percentuais elevados entre redes, mas os déficits de esgotamento sanitário permanecem mais concentrados, especialmente na rede municipal, que atende o maior contingente de alunos.
 
 ## 9) Pressão de Infraestrutura: Matrículas por Sala (Região)
 
