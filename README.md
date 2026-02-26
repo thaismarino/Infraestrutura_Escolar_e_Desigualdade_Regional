@@ -1,147 +1,135 @@
-   📊 ETL – Camada de Staging  
- Projeto: Censo Escolar 2024
-
-Este repositório contém o pipeline de *Extração e Carga (ETL)* responsável pela ingestão dos microdados do Censo Escolar 2024 em uma camada intermediária de staging no MySQL.
-
-A base de dados é disponibilizada pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP).
+  ETL – CAMADA DE STAGING
+Projeto: Censo Escolar 2024
 
 
-# 🏗 Arquitetura da Solução
-A solução foi desenvolvida utilizando:
-- Python  
-- Pandas  
-- SQLAlchemy  
-- MySQL  
-- DBeaver  
+1 INTRODUÇÃO
 
-*Fluxo do processo:*
+O presente documento descreve o processo de ETL (Extract, Transform and Load) desenvolvido para a ingestão dos microdados do Censo Escolar 2024 em ambiente relacional. A base de dados é disponibilizada pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP) e contém informações educacionais em larga escala, exigindo controle estrutural no processo de carga.
 
-CSV (Fonte Bruta)
-↓
-Pandas (Extração + Estruturação)
-↓
+A solução foi estruturada com foco na organização, reprodutibilidade e separação entre a camada de ingestão e a camada analítica, adotando boas práticas de engenharia de dados.
+
+2 ARQUITETURA DA SOLUÇÃO
+
+A implementação do pipeline utilizou as seguintes tecnologias:
+
+Python
+
+Pandas
+
 SQLAlchemy
-↓
-MySQL (Tabela stg_escolas_2024)
 
+MySQL
 
+DBeaver
 
- 🗄 Camada de Staging – stg_escolas_2024
+O fluxo do processo ocorre conforme a sequência abaixo:
 
-A tabela stg_escolas_2024 atua como camada intermediária de ingestão, com as seguintes características:
+Arquivo CSV (fonte bruta) → Extração e estruturação via Pandas → Conexão com SQLAlchemy → Persistência no MySQL (tabela stg_escolas_2024).
 
-- Recebe dados estruturados sem aplicação de regras analíticas  
-- Não contém modelagem dimensional  
-- Não aplica cálculos ou agregações  
-- É recriada a cada execução do pipeline  
+3 PROCESSO DE ETL
+3.1 Extração
 
-A estrutura da tabela é gerada dinamicamente durante a execução do método DataFrame.to_sql(), com base na inferência automática de tipos realizada pelo Pandas.
-
-
-🔄 Processo ETL
-
-1️⃣ Extração
- A extração ocorre a partir do arquivo: microdados_ed_basica_2024.csv
+A extração foi realizada a partir do arquivo microdados_ed_basica_2024.csv, disponibilizado pelo INEP.
 
 Características técnicas do arquivo:
-- Separador: ;
-- Codificação: latin-1
-- Alto volume de registros
 
-Leitura realizada via:
+Formato: CSV
 
-pd.read_csv(
-    arquivo_origem,
-    sep=';',
-    encoding='latin-1',
-    usecols=colunas_interesse
-)
+Separador: ponto e vírgula (;)
 
-*Estratégias aplicadas:*
-- Uso de usecols para leitura seletiva
-- Redução de consumo de memória
-- Otimização de performance
-- 
- 2️⃣ Preparação Estrutural (Staging)
+Codificação: latin-1
 
-Nesta etapa não são aplicadas transformações analíticas.
-O processamento inclui:
-- Seleção programática das colunas relevantes
-- Organização do DataFrame conforme estrutura esperada
-- Inferência automática de tipos de dados pelo Pandas
-- Garantia de compatibilidade estrutural com o MySQL
+Alto volume de registros
 
-A camada mantém os dados em estado próximo ao original, preservando granularidade.
- 3️⃣ Carga no MySQL
+A leitura foi executada por meio da função:
 
-Carga realizada por meio do método:
+pd.read_csv(arquivo_origem, sep=';', encoding='latin-1', usecols=colunas_interesse)
 
-df.to_sql(
-    name='stg_escolas_2024',
-    con=engine,
-    if_exists='replace',
-    index=False,
-    chunksize=1000
-)
+A utilização do parâmetro usecols permitiu a leitura seletiva das colunas necessárias, reduzindo o consumo de memória e aumentando a eficiência do processamento.
 
-*Parâmetros relevantes*
-- if_exists='replace' 
-Garante recriação da tabela a cada execução (evita duplicidade).
-- chunksize=1000 
-Realiza inserção em lotes para:
-- Reduzir consumo de memória
-- Melhorar desempenho
-- Minimizar risco de falha em grandes volumes
-- Internamente, o SQLAlchemy gera múltiplos comandos INSERT automatizados.
+3.2 Preparação Estrutural (Staging)
 
- ✅ Validação Pós-Carga
+Nesta etapa não foram aplicadas transformações analíticas, agregações ou regras de negócio. O processamento consistiu em:
 
-Validação realizada via DBeaver com consulta:
+Seleção programática das colunas relevantes;
+
+Organização do DataFrame conforme estrutura esperada;
+
+Inferência automática de tipos de dados pelo Pandas;
+
+Garantia de compatibilidade estrutural com o MySQL.
+
+A camada de staging mantém os dados em estado próximo ao original, preservando a granularidade das informações.
+
+3.3 Carga no Banco de Dados
+
+A carga foi realizada por meio do método:
+
+df.to_sql(name='stg_escolas_2024', con=engine, if_exists='replace', index=False, chunksize=1000)
+
+Parâmetros relevantes:
+
+if_exists='replace': recria a tabela a cada execução, evitando duplicidade de registros;
+
+chunksize=1000: realiza inserção em lotes, reduzindo consumo de memória e melhorando o desempenho.
+
+O SQLAlchemy foi responsável por gerar automaticamente os comandos INSERT necessários para a persistência dos dados.
+
+4 VALIDAÇÃO PÓS-CARGA
+
+A validação foi realizada no DBeaver por meio da consulta:
 
 SELECT COUNT(*) FROM stg_escolas_2024;
 
-Verificações executadas:
-- Conferência de total de registros
-- Inspeção amostral de dados
-- Validação estrutural das colunas
-- 
-  ⚙️ Características Técnicas da Camada
+Foram executadas as seguintes verificações:
 
-- Processo idempotente (recriação da tabela)
-- Automação completa via Python
-- Carga em batches
-- Separação arquitetural entre ingestão e camada analítica
-- Estrutura reprodutível
+Conferência do total de registros inseridos;
 
-📌 Limitações da Camada de Staging
+Inspeção amostral das linhas;
 
-- Não possui constraints explícitas (PRIMARY KEY, FOREIGN KEY)
-- Não possui indexação
-- Não contém regras de negócio
-- Não realiza transformação semântica
-- A camada foi projetada exclusivamente para ingestão estruturada.
+Validação estrutural das colunas.
 
-🚀 Próximas Evoluções
+Esse procedimento assegurou a integridade e completude da carga.
 
-- Implementação de logging estruturado
-- Criação de camada de transformação (curated layer)
-- Estratégia de carga incremental
-- Indexação para consultas analíticas
+5 CARACTERÍSTICAS DA CAMADA DE STAGING
 
- Observação
-Este pipeline foi desenvolvido com foco em organização estrutural e reprodutibilidade do processo de ingestão de dados educacionais em ambiente relacional.
- Detalhamento Técnico do Processo de ETL e Carga (Camada de Staging)
+A tabela stg_escolas_2024 apresenta as seguintes características:
 
-A etapa de ETL foi estruturada com foco na ingestão controlada dos microdados do Censo Escolar 2024 em uma camada intermediária de armazenamento, denominada stg_escolas_2024. Essa camada foi concebida como ambiente técnico de staging, responsável por receber e organizar preliminarmente os dados brutos antes de qualquer consolidação analítica ou modelagem dimensional.
+Processo idempotente (recriação a cada execução);
 
-A estrutura da tabela stg_escolas_2024 não foi criada manualmente por meio de script SQL tradicional. Sua definição ocorreu dinamicamente durante a execução do pipeline em Python, por meio do método DataFrame.to_sql(), integrado ao SQLAlchemy para comunicação com o MySQL. Ao utilizar o parâmetro if_exists='replace', o processo passou a recriar automaticamente a tabela a cada execução, garantindo que a estrutura refletisse fielmente o DataFrame gerado na etapa de extração. Os tipos de dados no MySQL foram determinados com base na inferência automática realizada pelo Pandas durante a leitura do arquivo CSV, sendo posteriormente convertidos para tipos compatíveis pelo mecanismo de abstração do SQLAlchemy.
+Ausência de modelagem dimensional;
 
-O processo de extração iniciou-se com a leitura do arquivo original microdados_ed_basica_2024.csv, disponibilizado pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP). O arquivo, estruturado em formato .CSV, utiliza separador ; e codificação latin-1, características que foram explicitamente definidas na função pd.read_csv() para garantir correta interpretação dos dados. Durante essa etapa, foi utilizada a parametrização usecols, permitindo a leitura seletiva apenas das colunas relevantes para a composição da camada de estágio. Essa estratégia reduziu significativamente o consumo de memória e aumentou a eficiência do carregamento, especialmente considerando o elevado volume de registros do Censo Escolar.
+Inexistência de cálculos ou indicadores;
 
-A etapa de preparação dos dados teve caráter exclusivamente estrutural. Não foram aplicadas transformações analíticas, cálculos derivados ou agregações. O tratamento realizado consistiu na organização do DataFrame conforme o conjunto de colunas previamente definido, assegurando compatibilidade nominal e estrutural com a tabela que seria criada no MySQL. A inferência automática de tipos pelo Pandas garantiu que variáveis numéricas fossem reconhecidas como inteiros ou floats, enquanto variáveis categóricas e textuais fossem interpretadas como strings. Essa inferência foi utilizada como base para a geração do schema no banco de dados, mantendo coerência entre a estrutura em memória e a estrutura persistida.
+Não aplicação de regras de negócio;
 
-A etapa de carga foi realizada integralmente por meio do método to_sql(), responsável por transferir os dados do DataFrame para o banco relacional. O envio ocorreu em lotes de mil registros (chunksize=1000), estratégia adotada para evitar sobrecarga de memória e otimizar a comunicação entre a aplicação Python e o servidor MySQL. Internamente, o SQLAlchemy gerou automaticamente múltiplos comandos INSERT, realizando a inserção em massa de forma automatizada e transacional. O uso de if_exists='replace' assegurou que execuções subsequentes do pipeline não gerassem duplicidade de registros, uma vez que a tabela é recriada a cada execução.
+Estrutura gerada dinamicamente via DataFrame.to_sql();
 
-Após a conclusão da carga, a validação foi realizada por meio do DBeaver, utilizando consulta SQL para verificação da contagem total de registros inseridos na tabela stg_escolas_2024. A consulta SELECT COUNT(*) FROM stg_escolas_2024; permitiu comparar o total persistido no banco com o número de registros carregados inicialmente no DataFrame, assegurando completude da operação. Também foi realizada inspeção exploratória das primeiras linhas para confirmar consistência estrutural e integridade aparente dos dados.
+Separação arquitetural entre ingestão e análise.
 
-É importante destacar que a camada stg_escolas_2024 não possui modelagem dimensional, não contém cálculos de indicadores e não aplica regras de negócio. Sua função é exclusivamente atuar como camada transitória de ingestão, garantindo organização preliminar e reprodutibilidade do processo. A consolidação analítica e a preparação para consultas OLAP foram realizadas posteriormente em estrutura complementar, mantendo separação arquitetural entre ingestão e análise.
+A camada foi projetada exclusivamente para armazenamento intermediário e organização preliminar dos dados.
+
+6 LIMITAÇÕES E EVOLUÇÕES FUTURAS
+6.1 Limitações
+
+Não possui constraints explícitas (PRIMARY KEY, FOREIGN KEY);
+
+Não possui indexação;
+
+Não realiza transformação semântica dos dados.
+
+6.2 Evoluções Futuras
+
+Implementação de logging estruturado;
+
+Criação de camada de transformação (curated layer);
+
+Estratégia de carga incremental;
+
+Indexação para otimização de consultas analíticas.
+
+7 CONSIDERAÇÕES FINAIS
+
+O pipeline de ETL desenvolvido para o Censo Escolar 2024 cumpre o objetivo de organizar e estruturar os microdados em ambiente relacional, garantindo controle técnico, reprodutibilidade e separação adequada entre ingestão e análise.
+
+A adoção de uma camada de staging assegura maior governança sobre os dados brutos e estabelece base sólida para futuras etapas de transformação e modelagem analítica. 
