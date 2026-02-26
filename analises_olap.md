@@ -70,22 +70,24 @@ O gráfico confirma os percentuais obtidos via SQL e facilita a comparação dir
 
 ### Interpretação
 
-A análise revela desigualdade significativa de infraestrutura conforme a dependência administrativa.
+A análise evidencia desigualdade relevante na infraestrutura escolar conforme a dependência administrativa.
 
-As escolas federais apresentam os maiores percentuais de cobertura em praticamente todos os indicadores, com destaque para energia elétrica (97,65%) e acesso à internet (97,79%), indicando infraestrutura amplamente consolidada.
+As escolas federais apresentam os maiores percentuais de cobertura em praticamente todos os indicadores, com destaque para energia elétrica (**97,65%**) e acesso à internet (**97,79%**), indicando infraestrutura amplamente consolidada nesse segmento.
 
-As escolas privadas também apresentam desempenho elevado e consistente, especialmente no acesso à rede pública de esgoto (73,31%), superior às redes estadual e municipal.
+As escolas privadas também demonstram desempenho elevado, especialmente no acesso à rede pública de esgoto (**73,31%**), percentual significativamente superior ao observado nas redes estadual (**56,20%**) e municipal (**36,87%**).
 
-As escolas estaduais apresentam desempenho intermediário, enquanto as escolas municipais, que concentram o maior número absoluto de unidades (128.999), registram os menores percentuais em todos os indicadores analisados, especialmente em esgotamento sanitário (36,87%) e abastecimento de água (57,67%).
+As escolas estaduais apresentam desempenho intermediário, enquanto as escolas municipais — que concentram o maior número absoluto de unidades (**128.999**) — registram os menores percentuais em todos os indicadores analisados, com destaque para o esgotamento sanitário (**36,87%**) e abastecimento de água por rede pública (**57,67%**).
 
-Observa-se que o esgotamento sanitário permanece como o principal gargalo estrutural em todas as dependências administrativas.
+Observa-se que o esgotamento sanitário constitui o principal gargalo estrutural entre as redes públicas, especialmente na esfera municipal, onde se concentra a maior parcela das escolas do país.
+
+Os resultados indicam que a desigualdade de infraestrutura não se limita a diferenças regionais, mas também se manifesta de forma significativa entre os diferentes níveis de administração escolar.
 
 
 ### Evidência Visual (Power BI) - Consulta 3 
 
 ![Infraestrutura por Dependência - Power BI](analises/img/03_infraestrutura_por_dependencia_powerbi.png)
 
-A visualização confirma as diferenças por dependência administrativa e reforça o contraste entre redes federal/privada e municipal, sobretudo em esgotamento sanitário.
+A visualização confirma o contraste estrutural entre as redes federal e privada, com maiores níveis de cobertura, e a rede municipal, que apresenta os menores percentuais, especialmente em esgotamento sanitário. A diferença é mais acentuada no indicador de esgoto, evidenciando vulnerabilidade estrutural concentrada nas escolas municipais.
 
 ---
 
