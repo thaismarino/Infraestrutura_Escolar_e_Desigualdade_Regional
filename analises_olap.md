@@ -76,7 +76,7 @@ As escolas federais apresentam os maiores percentuais de cobertura em praticamen
 
 As escolas privadas também demonstram desempenho elevado, especialmente no acesso à rede pública de esgoto (**73,31%**), percentual significativamente superior ao observado nas redes estadual (**56,20%**) e municipal (**36,87%**).
 
-As escolas estaduais apresentam desempenho intermediário, enquanto as escolas municipais — que concentram o maior número absoluto de unidades (**128.999**) — registram os menores percentuais em todos os indicadores analisados, com destaque para o esgotamento sanitário (**36,87%**) e abastecimento de água por rede pública (**57,67%**).
+As escolas estaduais apresentam desempenho intermediário, enquanto as escolas municipais, que concentram o maior número absoluto de unidades (**128.999**), registram os menores percentuais em todos os indicadores analisados, com destaque para o esgotamento sanitário (**36,87%**) e abastecimento de água por rede pública (**57,67%**).
 
 Observa-se que o esgotamento sanitário constitui o principal gargalo estrutural entre as redes públicas, especialmente na esfera municipal, onde se concentra a maior parcela das escolas do país.
 
@@ -98,22 +98,21 @@ A visualização confirma o contraste estrutural entre as redes federal e privad
 
 ### Interpretação
 
-A análise destaca que a desigualdade digital nas escolas brasileiras apresenta forte relação com a dependência administrativa.
+A análise evidencia desigualdade digital associada à dependência administrativa das escolas.
 
-Embora o acesso básico à internet esteja relativamente disseminado nas redes estadual, municipal e privada, observa-se diferença mais acentuada quando o indicador é banda larga e presença de rede local estruturada.
+As escolas federais apresentam níveis de conectividade amplamente consolidados, com percentuais superiores a **95%** em todos os indicadores analisados, indicando infraestrutura digital praticamente universalizada nesse segmento.
 
-As escolas municipais apresentam os menores percentuais tanto de banda larga (63,25%) quanto de rede local (61,93%), indicando que o desafio não está apenas no acesso à internet, mas na qualidade e estrutura da conectividade disponível.
+As redes estadual e privada apresentam desempenho intermediário. Embora o acesso básico à internet ultrapasse **80%** nessas redes, observa-se redução relevante quando o indicador passa a ser banda larga e, sobretudo, presença de rede local estruturada.
 
-As escolas federais demonstram padrão de conectividade praticamente universalizado, com percentuais superiores a 95% em todos os indicadores digitais.
+As escolas municipais registram os menores percentuais em todos os indicadores digitais, especialmente em banda larga (**63,25%**) e rede local (**61,93%**), evidenciando que o principal desafio não se limita ao acesso à internet, mas à qualidade e à estrutura da conectividade disponível.
 
-Os resultados sugerem que a desigualdade digital envolve não apenas presença de conexão, mas também qualidade da infraestrutura tecnológica interna, o que pode impactar diretamente o uso pedagógico da tecnologia.
-
+Os dados indicam que a desigualdade digital manifesta-se de forma mais intensa nos indicadores de infraestrutura interna e qualidade de conexão, reforçando que o simples acesso à internet não garante condições adequadas para uso pedagógico da tecnologia.
 
 ### Evidência Visual (Power BI) - Consulta 4
 
 ![Conectividade por Dependência - Power BI](analises/img/04_conectividade_por_dependencia_powerbi.png)
 
-O gráfico confirma os percentuais obtidos via SQL e evidencia diferenças mais acentuadas na qualidade da conectividade (banda larga e rede local) do que no simples acesso à internet.
+O gráfico confirma os percentuais obtidos via SQL e evidencia que as diferenças entre as redes são mais acentuadas nos indicadores de qualidade da conectividade, banda larga e rede local, do que no acesso básico à internet, destacando maior vulnerabilidade na rede municipal.
 
 --- 
 
