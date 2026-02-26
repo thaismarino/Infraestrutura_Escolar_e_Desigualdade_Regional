@@ -42,17 +42,17 @@ O painel confirma os resultados obtidos na consulta SQL, evidenciando maior conc
 
 ### Interpretação
 
-A análise evidencia desigualdade regional consistente nos indicadores de infraestrutura básica escolar.
+A análise evidencia desigualdade regional consistente nos indicadores de infraestrutura básica escolar, considerando o total de escolas por região e a presença de registros sem informação declarada.
 
-A Região Norte apresenta os menores percentuais em todos os serviços analisados, com destaque para o acesso à rede pública de esgoto (11,94%) e água (30,91%), indicando forte vulnerabilidade estrutural.
+A Região Norte concentra os menores percentuais de cobertura em todos os serviços analisados, com maior criticidade no acesso à rede pública de esgoto (**11,94%**) e à água por rede pública (**30,91%**), indicando vulnerabilidade estrutural relevante. O Nordeste também apresenta baixa cobertura de esgoto (**32,16%**), reforçando a concentração do déficit sanitário nas regiões Norte e Nordeste.
 
-A Região Nordeste também apresenta baixa cobertura de esgoto (32,16%), reforçando a concentração do déficit sanitário nas regiões Norte e Nordeste.
+Em contraste, Sul e Centro-Oeste registram os maiores percentuais de cobertura, sobretudo no fornecimento de energia elétrica (acima de **91%**) e em coleta de lixo (aproximadamente **86%** a **90%**), evidenciando maior consolidação da infraestrutura básica nessas regiões.
 
-Em contraste, Sul e Centro-Oeste registram os maiores percentuais de cobertura, especialmente no fornecimento de energia elétrica (acima de 91%), evidenciando maior consolidação da infraestrutura básica nessas regiões.
+Observa-se que a energia elétrica é o serviço mais universalizado entre os indicadores avaliados, enquanto o esgotamento sanitário permanece como o principal gargalo estrutural no país.
 
-Observa-se que a energia elétrica é o serviço mais universalizado nacionalmente, enquanto o esgotamento sanitário configura o principal gargalo estrutural.
+Além disso, há variação regional na proporção de registros sem dado informado para cada indicador, com maior impacto no Sudeste e Nordeste, o que sugere cautela na leitura comparativa e possível fragilidade no preenchimento ou consolidação dos microdados.
 
-Os dados indicam que as diferenças regionais observadas abrangem não apenas aspectos tecnológicos, mas também serviços básicos essenciais à estrutura física das escolas.
+> Observação: Os percentuais foram calculados sobre o total de escolas por região. Na camada analítica, a view retorna percentuais no padrão 0–1, e a formatação em porcentagem é aplicada no Power BI.
 
 
 ### Evidência Visual (Power BI) - Consulta 2 
