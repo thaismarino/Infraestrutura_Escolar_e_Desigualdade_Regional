@@ -209,22 +209,49 @@ GROUP BY TP_LOCALIZACAO
 ORDER BY TP_LOCALIZACAO;
 
 -- 7) Impacto por matrícula: % de matrículas em escolas com internet e com esgoto de rede (por região)
--- Métrica: soma de QT_MAT_BAS nas escolas com o recurso / soma total de QT_MAT_BAS na região
+-- Métrica: soma de matrículas (QT_MAT_BAS) nas escolas com o recurso / soma total de matrículas na região
 
 SELECT
   NO_REGIAO,
-  SUM(QT_MAT_BAS) AS total_matriculas,
+
+  /* Total de matrículas (tratando NULL como 0) */
+  SUM(COALESCE(QT_MAT_BAS, 0)) AS total_matriculas,
+
+  /* INTERNET: matrículas em escolas com internet */
+  SUM(CASE WHEN IN_INTERNET = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_em_escolas_com_internet,
+  SUM(CASE WHEN IN_INTERNET IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_em_escolas_internet_sem_dado,
+
   ROUND(
-    SUM(CASE WHEN IN_INTERNET = 1 THEN QT_MAT_BAS ELSE 0 END) / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    SUM(CASE WHEN IN_INTERNET = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
     2
-  ) AS pct_matriculas_em_escolas_com_internet,
+  ) AS pct_mat_em_escolas_com_internet,
+
   ROUND(
-    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN QT_MAT_BAS ELSE 0 END) / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    SUM(CASE WHEN IN_INTERNET IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
     2
-  ) AS pct_matriculas_em_escolas_com_esgoto_rede
+  ) AS pct_mat_internet_sem_dado,
+
+  /* ESGOTO: matrículas em escolas com esgoto por rede pública */
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_em_escolas_com_esgoto_rede,
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_em_escolas_esgoto_sem_dado,
+
+  ROUND(
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
+    2
+  ) AS pct_mat_em_escolas_com_esgoto_rede,
+
+  ROUND(
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
+    2
+  ) AS pct_mat_esgoto_sem_dado
+
 FROM microdados_ed_basica
 GROUP BY NO_REGIAO
-ORDER BY pct_matriculas_em_escolas_com_internet DESC;
+ORDER BY pct_mat_em_escolas_com_internet DESC;
 
 -- 8) Impacto por matrícula: dependência administrativa
 -- Métrica: % das matrículas em escolas com internet e esgoto de rede
