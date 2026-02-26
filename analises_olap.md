@@ -123,20 +123,22 @@ O gráfico confirma os percentuais obtidos via SQL e evidencia que as diferença
 
 ### Interpretação
 
-A análise evidencia uma disparidade expressiva entre escolas urbanas e rurais no que se refere à conectividade digital.
+A análise evidencia desigualdade significativa entre escolas urbanas e rurais no que se refere à conectividade digital.
 
-Enquanto 88,43% das escolas urbanas possuem acesso à internet, esse percentual cai para 54,91% nas escolas rurais, configurando diferença superior a 30 pontos percentuais.
+Nas áreas urbanas, **88,43%** das escolas possuem acesso à internet, enquanto nas áreas rurais esse percentual é de **54,91%**, configurando diferença superior a 30 pontos percentuais.
 
-A desigualdade torna-se ainda mais acentuada quando observados os indicadores de qualidade da conectividade: apenas 41,51% das escolas rurais possuem banda larga, contra 80,08% nas áreas urbanas. O mesmo padrão é observado na presença de rede local estruturada (78,46% urbano vs. 41,15% rural).
+A disparidade torna-se ainda mais acentuada quando observados os indicadores de qualidade da conectividade. Apenas **41,51%** das escolas rurais possuem banda larga, frente a **80,08%** nas escolas urbanas. O mesmo padrão é verificado na presença de rede local estruturada, com **78,46%** nas áreas urbanas e **41,15%** nas rurais.
 
-Os resultados indicam que a desigualdade digital no contexto educacional brasileiro está fortemente associada ao território, com maior vulnerabilidade nas áreas rurais, especialmente em relação à qualidade e estrutura da infraestrutura tecnológica disponível.
+Observa-se também maior proporção de registros sem informação nas escolas rurais, especialmente nos indicadores de banda larga e rede local, o que reforça a fragilidade estrutural e possivelmente informacional nesse segmento.
+
+Os resultados indicam que a desigualdade digital no contexto educacional brasileiro apresenta forte componente territorial, com vulnerabilidade mais intensa nas áreas rurais, sobretudo nos aspectos relacionados à qualidade e estrutura da infraestrutura tecnológica.
 
 
 ### Evidência Visual (Power BI) - Consulta 5
 
 ![Conectividade por Localização - Power BI](analises/img/05_conectividade_por_localizacao_powerbi.png)
 
-A visualização confirma a diferença significativa entre escolas urbanas e rurais, especialmente nos indicadores de banda larga e rede local, evidenciando maior vulnerabilidade estrutural nas áreas rurais.
+O gráfico confirma a diferença estrutural entre escolas urbanas e rurais, evidenciando que a desigualdade é mais intensa nos indicadores de qualidade da conectividade, banda larga e rede local, do que no acesso básico à internet.
 
 ---
 
