@@ -11,15 +11,20 @@ As análises a seguir foram estruturadas em três eixos principais: território 
 
 ### Interpretação
 
-A análise evidencia disparidade regional no acesso à internet nas escolas brasileiras.
+A análise evidencia desigualdade regional no acesso à internet nas escolas brasileiras, considerando o total de unidades por região.
 
-As regiões Centro-Oeste e Sul apresentam percentuais superiores a 90% de conectividade, enquanto a Região Norte apresenta aproximadamente 58,85%, configurando diferença superior a 30 pontos percentuais entre os extremos.
+As regiões Centro-Oeste (**91,51%**) e Sul (**90,65%**) apresentam os maiores percentuais de escolas com acesso à internet, indicando elevado nível de conectividade institucional.
 
-Essa diferença sugere desigualdade estrutural na infraestrutura tecnológica educacional, possivelmente associada a fatores geográficos, econômicos e de investimento público.
+Em contraste, a Região Norte registra apenas **58,85%** de escolas com internet, além de apresentar o maior percentual de escolas sem acesso (**29,26%**), configurando diferença superior a 30 pontos percentuais entre os extremos regionais.
 
-O padrão observado confirma que a conectividade escolar apresenta distribuição territorial assimétrica, com maior consolidação nas regiões mais desenvolvidas.
+O Nordeste e o Sudeste apresentam níveis intermediários de conectividade, com **73,56%** e **80,18%**, respectivamente, mas também concentram proporção relevante de registros sem informação declarada (**19,45%** no Nordeste e **18,09%** no Sudeste).
 
-> Observação: A métrica foi calculada com base na proporção de escolas com IN_INTERNET = 1 em relação ao total de escolas por região.
+A presença de escolas sem dado declarado varia entre as regiões, sendo mais expressiva no Nordeste e Sudeste, o que indica possível fragilidade no preenchimento ou na consolidação das informações.
+
+De forma geral, os resultados confirmam distribuição territorial desigual da infraestrutura tecnológica educacional, com maior consolidação nas regiões mais desenvolvidas e maiores déficits estruturais nas regiões Norte e Nordeste.
+
+> Observação: A métrica foi calculada com base na proporção de escolas com IN_INTERNET = 1 em relação ao total de escolas por região, incluindo no denominador as escolas sem informação declarada.
+
 
 
 ### Evidência (Power BI) - Consulta 1
