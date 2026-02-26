@@ -149,19 +149,21 @@ O gráfico confirma a diferença estrutural entre escolas urbanas e rurais, evid
 
 ### Interpretação
 
-A análise evidencia disparidade estrutural acentuada entre escolas urbanas e rurais nos indicadores de infraestrutura básica.
+A análise evidencia desigualdade estrutural significativa entre escolas urbanas e rurais nos indicadores de infraestrutura básica.
 
-Enquanto as escolas urbanas apresentam cobertura superior a 84% em abastecimento de água e quase 90% em energia elétrica e coleta de lixo, as escolas rurais registram percentuais significativamente inferiores, especialmente em esgotamento sanitário, onde apenas 6,56% possuem rede pública.
+Nas áreas urbanas, os percentuais de cobertura são elevados, superando **84%** no abastecimento de água por rede pública e aproximando-se de **90%** nos serviços de energia elétrica e coleta de lixo, indicando maior consolidação da infraestrutura essencial.
 
-A diferença superior a 60 pontos percentuais no acesso à rede pública de esgoto indica um déficit sanitário crítico nas áreas rurais.
+Nas áreas rurais, os percentuais são substancialmente inferiores, com destaque para o esgotamento sanitário, onde apenas **6,56%** das escolas possuem acesso à rede pública. A diferença superior a 60 pontos percentuais em relação às áreas urbanas evidencia um déficit sanitário crítico no meio rural.
 
-A magnitude das diferenças evidencia que as condições materiais mínimas de funcionamento escolar apresentam forte variação territorial, especialmente nas áreas rurais, onde os serviços sanitários configuram o principal ponto de fragilidade estrutural.
+As disparidades também se manifestam no abastecimento de água e nos demais serviços básicos, reforçando que as condições materiais mínimas de funcionamento escolar apresentam forte componente territorial.
+
+Os resultados indicam que a vulnerabilidade estrutural das escolas rurais não se limita à conectividade digital, mas abrange serviços básicos essenciais, especialmente no que se refere ao saneamento.
 
 ### Evidência Visual (Power BI) - Consulta 6 
 
 ![Infraestrutura por Localização - Power BI](analises/img/06_infraestrutura_por_localizacao_powerbi.png)
 
-O gráfico confirma a diferença estrutural entre escolas urbanas e rurais, com maior déficit no esgotamento sanitário e demais serviços básicos nas áreas rurais.
+O gráfico confirma a diferença estrutural entre escolas urbanas e rurais, evidenciando maior déficit nas áreas rurais, especialmente no acesso à rede pública de esgoto, que se configura como o principal gargalo de infraestrutura básica.
 
 ---
 
