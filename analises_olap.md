@@ -174,19 +174,20 @@ O gráfico confirma a diferença estrutural entre escolas urbanas e rurais, evid
 
 ### Interpretação
 
-Ao considerar o peso das matrículas, observa-se que a proporção de alunos matriculados em escolas com acesso à internet é elevada na maior parte das regiões, superando 97% no Centro-Oeste, Sul, Sudeste e Nordeste. Mesmo no Norte, o percentual atinge 86,59%, valor superior ao observado quando a métrica considera apenas o número de escolas.
+Ao considerar o peso das matrículas, observa-se que a proporção de alunos matriculados em escolas com acesso à internet é elevada na maior parte das regiões, superando **97%** no Centro-Oeste, Sul, Sudeste e Nordeste. Mesmo na Região Norte, o percentual atinge **86,59%**, valor significativamente superior ao observado quando a análise considera apenas o número de escolas.
 
-Esse resultado indica que as matrículas encontram-se concentradas em escolas com acesso à internet, reduzindo parcialmente o impacto da desigualdade quando a análise é ponderada pelo volume de alunos.
+Esse resultado indica que as matrículas estão concentradas em unidades com acesso à internet, o que reduz parcialmente o impacto da desigualdade estrutural quando a métrica é ponderada pelo volume de estudantes atendidos.
 
-Entretanto, o cenário é distinto no indicador de esgotamento sanitário. A Região Norte apresenta apenas 24,62% das matrículas em escolas com acesso à rede pública de esgoto, enquanto o Sudeste atinge 93,97%. A diferença expressiva demonstra que, sob a perspectiva do estudante, a desigualdade estrutural permanece significativa, especialmente nas regiões com menor cobertura sanitária.
+Entretanto, o cenário difere substancialmente no indicador de esgotamento sanitário. A Região Norte apresenta apenas **24,62%** das matrículas em escolas com acesso à rede pública de esgoto, enquanto o Sudeste atinge **93,97%**. A diferença expressiva evidencia que, sob a perspectiva do aluno, a desigualdade estrutural permanece significativa, especialmente nas regiões com menor cobertura sanitária.
 
-A análise ponderada por matrículas permite avaliar não apenas a distribuição de infraestrutura entre escolas, mas também o potencial impacto dessas condições sobre o conjunto de alunos atendidos.
+A análise ponderada por matrículas demonstra que a conectividade digital atinge maior parcela dos estudantes do que a infraestrutura sanitária, reforçando que o principal déficit estrutural, quando avaliado pelo impacto sobre alunos, permanece concentrado no esgotamento sanitário.
+
 
 ### Evidência Visual (Power BI) - Consulta 7 
 
 ![Impacto por Matrículas - Região - Power BI](analises/img/07_matriculas_internet_esgoto_por_regiao_powerbi.png)
 
-A visualização confirma a análise ponderada por matrículas, mostrando que a conectividade tende a concentrar alunos em escolas com melhor estrutura, enquanto o déficit de esgotamento sanitário permanece mais crítico em determinadas regiões.
+O gráfico confirma que, quando ponderada por matrículas, a conectividade digital atinge a maior parte dos estudantes, enquanto o acesso à rede pública de esgoto permanece desigual entre as regiões, evidenciando maior impacto estrutural nas regiões com menor cobertura sanitária
 
 ---
 
