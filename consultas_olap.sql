@@ -1,16 +1,36 @@
--- 1) Percentual de escolas com acesso à internet por região
+-- Consulta 1 - Conectividade por Região (IN_INTERNET)
+-- Observação: No Power BI, o visual consome a view vw_conectividade_regiao
 
 SELECT
-    NO_REGIAO,
-    COUNT(*) AS total_escolas,
-    SUM(CASE WHEN IN_INTERNET = 1 THEN 1 ELSE 0 END) AS escolas_com_internet,
-    ROUND(
-        (SUM(CASE WHEN IN_INTERNET = 1 THEN 1 ELSE 0 END) / COUNT(*)) * 100,
-        2
-    ) AS percentual_com_internet
+  NO_REGIAO,
+
+  COUNT(*) AS total_escolas,
+
+  SUM(CASE WHEN IN_INTERNET IN (0,1) THEN 1 ELSE 0 END) AS escolas_com_dado,
+
+  SUM(CASE WHEN IN_INTERNET = 1 THEN 1 ELSE 0 END) AS escolas_com_internet,
+  SUM(CASE WHEN IN_INTERNET = 0 THEN 1 ELSE 0 END) AS escolas_sem_internet,
+  SUM(CASE WHEN IN_INTERNET IS NULL THEN 1 ELSE 0 END) AS escolas_sem_dado,
+
+  ROUND(
+    (SUM(CASE WHEN IN_INTERNET = 1 THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0)) * 100,
+    2
+  ) AS percentual_com_internet,
+
+  ROUND(
+    (SUM(CASE WHEN IN_INTERNET = 0 THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0)) * 100,
+    2
+  ) AS percentual_sem_internet,
+
+  ROUND(
+    (SUM(CASE WHEN IN_INTERNET IS NULL THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0)) * 100,
+    2
+  ) AS percentual_sem_dado
+
 FROM microdados_ed_basica
 GROUP BY NO_REGIAO
 ORDER BY percentual_com_internet DESC;
+
 
 -- 2) Infraestrutura básica por região (percentuais)
 
