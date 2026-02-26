@@ -5,7 +5,7 @@ Consolidar os indicadores de conectividade escolar por região geográfica com b
 
 ## Fonte de Dados
 
-Tabela: microdados_ed_basica
+Tabela: `microdados_ed_basica`
 
 ## Indicadores Gerados
 
