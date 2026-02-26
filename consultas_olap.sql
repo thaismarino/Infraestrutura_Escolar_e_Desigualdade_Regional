@@ -1,4 +1,4 @@
--- Consulta 1 - Conectividade por Região (IN_INTERNET)
+-- 1) Conectividade por Região (IN_INTERNET)
 -- Observação: No Power BI, o visual consome a view vw_conectividade_regiao
 
 SELECT
@@ -33,15 +33,39 @@ ORDER BY percentual_com_internet DESC;
 
 
 -- 2) Infraestrutura básica por região (percentuais)
+-- Observação: No Power BI, os visuais consomem a view vw_infraestrutura_basica_regiao.
 
 SELECT
-    NO_REGIAO,
-    COUNT(*) AS total_escolas,
+  NO_REGIAO,
+  COUNT(*) AS total_escolas,
 
-    ROUND(SUM(CASE WHEN IN_AGUA_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS pct_agua_rede_publica,
-    ROUND(SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS pct_esgoto_rede_publica,
-    ROUND(SUM(CASE WHEN IN_ENERGIA_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS pct_energia_rede_publica,
-    ROUND(SUM(CASE WHEN IN_LIXO_SERVICO_COLETA = 1 THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS pct_coleta_lixo
+  /* ÁGUA - rede pública */
+  SUM(CASE WHEN IN_AGUA_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) AS agua_sim,
+  SUM(CASE WHEN IN_AGUA_REDE_PUBLICA IN (0,1) THEN 1 ELSE 0 END) AS agua_com_dado,
+  SUM(CASE WHEN IN_AGUA_REDE_PUBLICA IS NULL THEN 1 ELSE 0 END) AS agua_sem_dado,
+  ROUND(SUM(CASE WHEN IN_AGUA_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0) * 100, 2) AS pct_agua_sim,
+  ROUND(SUM(CASE WHEN IN_AGUA_REDE_PUBLICA IS NULL THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0) * 100, 2) AS pct_agua_sem_dado,
+
+  /* ESGOTO - rede pública */
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) AS esgoto_sim,
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IN (0,1) THEN 1 ELSE 0 END) AS esgoto_com_dado,
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN 1 ELSE 0 END) AS esgoto_sem_dado,
+  ROUND(SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0) * 100, 2) AS pct_esgoto_sim,
+  ROUND(SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0) * 100, 2) AS pct_esgoto_sem_dado,
+
+  /* ENERGIA - rede pública */
+  SUM(CASE WHEN IN_ENERGIA_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) AS energia_sim,
+  SUM(CASE WHEN IN_ENERGIA_REDE_PUBLICA IN (0,1) THEN 1 ELSE 0 END) AS energia_com_dado,
+  SUM(CASE WHEN IN_ENERGIA_REDE_PUBLICA IS NULL THEN 1 ELSE 0 END) AS energia_sem_dado,
+  ROUND(SUM(CASE WHEN IN_ENERGIA_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0) * 100, 2) AS pct_energia_sim,
+  ROUND(SUM(CASE WHEN IN_ENERGIA_REDE_PUBLICA IS NULL THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0) * 100, 2) AS pct_energia_sem_dado,
+
+  /* LIXO - serviço de coleta */
+  SUM(CASE WHEN IN_LIXO_SERVICO_COLETA = 1 THEN 1 ELSE 0 END) AS lixo_sim,
+  SUM(CASE WHEN IN_LIXO_SERVICO_COLETA IN (0,1) THEN 1 ELSE 0 END) AS lixo_com_dado,
+  SUM(CASE WHEN IN_LIXO_SERVICO_COLETA IS NULL THEN 1 ELSE 0 END) AS lixo_sem_dado,
+  ROUND(SUM(CASE WHEN IN_LIXO_SERVICO_COLETA = 1 THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0) * 100, 2) AS pct_lixo_sim,
+  ROUND(SUM(CASE WHEN IN_LIXO_SERVICO_COLETA IS NULL THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0) * 100, 2) AS pct_lixo_sem_dado
 
 FROM microdados_ed_basica
 GROUP BY NO_REGIAO
