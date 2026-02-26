@@ -14,7 +14,6 @@ SELECT
   SUM(CASE WHEN IN_INTERNET = 0 THEN 1 ELSE 0 END) AS escolas_sem_internet,
   SUM(CASE WHEN IN_INTERNET IS NULL THEN 1 ELSE 0 END) AS escolas_sem_dado,
 
-  /* Percentuais em 0..1 (sem *100) */
   ROUND(
     SUM(CASE WHEN IN_INTERNET = 1 THEN 1 ELSE 0 END) / NULLIF(COUNT(*),0),
     4
