@@ -52,7 +52,7 @@ A Primeira Etapa teve caráter conceitual e metodológico, com foco na compreens
 - Identificação das variáveis relevantes
 - Levantamento de perguntas de negócio
 - Planejamento do processo de ETL
-- Definição conceitual do Índice Médio de Infraestrutura Escolar
+- Definição conceitual de métricas comparativas de infraestrutura escolar
 - Escolha das ferramentas analíticas
 
 Nesta etapa não houve execução do ETL, apenas planejamento e modelagem.
@@ -67,7 +67,7 @@ Nesta etapa não houve execução do ETL, apenas planejamento e modelagem.
 - Abrangência: Nacional  
 
 Link oficial para download dos microdados:
-https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar
+[Microdados:](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar)
 
 Os dados utilizados correspondem ao arquivo de escolas da edição 2024.
 
@@ -84,7 +84,7 @@ Os dados utilizados correspondem ao arquivo de escolas da edição 2024.
 - Limpeza e padronização
 - Tratamento de inconsistências
 - Recodificação de variáveis
-- Criação do Índice Médio de Infraestrutura
+- Definição conceitual de indicadores compostos de infraestrutura escolar
 
 ### Carga
 - Armazenamento da base tratada
@@ -120,17 +120,112 @@ Os dados utilizados correspondem ao arquivo de escolas da edição 2024.
 
 ---
 
-# Fase 2 – Implantação da Solução (Em desenvolvimento)
+# Fase 2 – Implantação da Solução
 
-A Segunda Etapa contempla:
+A Segunda Etapa corresponde à implementação prática da solução planejada na Fase 1, contemplando a execução do ETL, estruturação da base relacional e construção das análises OLAP.
 
-- Execução do processo de ETL
-- Estruturação da base relacional
-- Construção de consultas analíticas (OLAP)
-- Geração de indicadores comparativos
-- Produção de evidências e análises interpretativas
+A arquitetura foi organizada em camadas complementares:
 
-As entregas desta etapa estão sendo documentadas nas respectivas branches do repositório.
+- Fonte de dados (CSV oficial – INEP)
+- Camada Staging: `stg_escolas_2024`
+- Camada Analítica: `microdados_ed_basica`
+
+Essa separação garante organização, rastreabilidade e suporte adequado às análises comparativas desenvolvidas.
+
+---
+
+## 1. Definição das Tecnologias e Vídeo – Felipe  
+**Branch:** `feature/definicao-tecnologias`
+
+Responsável por:
+
+- Consolidação da stack tecnológica utilizada na solução  
+- Definição do MySQL como SGBD relacional  
+- Uso de Python (Pandas e NumPy) no processo de ETL  
+- Utilização do DBeaver para validação e gerenciamento do banco  
+- Definição do Power BI como ferramenta de visualização analítica  
+- Organização do versionamento via GitHub  
+
+---
+
+## 2. Fonte de Dados e Extração – Isabel  
+**Branch:** `Fonte-de-dados-e-extração`
+
+Responsável por:
+
+- Documentação da fonte oficial dos microdados (INEP)  
+- Descrição técnica do formato original dos arquivos (CSV, encoding, separador)  
+- Desenvolvimento de script Python para extração e carga inicial dos dados  
+- Implementação da conexão segura ao banco MySQL via SQLAlchemy  
+- Inserção dos dados na tabela staging `stg_escolas_2024`  
+
+---
+
+## 👤 3. Detalhamento Técnico do ETL – Bruno  
+**Branch:** `Detalhamento-técnico`
+
+Responsável por:
+
+- Documentação técnica da arquitetura do pipeline ETL  
+- Descrição da camada de staging `stg_escolas_2024`  
+- Detalhamento das decisões técnicas (usecols, chunksize, replace, idempotência)  
+- Validação pós-carga e controle de integridade  
+- Análise de limitações e possibilidades de evolução da solução  
+
+---
+
+## 4. Execução da Carga e Estrutura Relacional – Paula  
+**Branch:** `Processo-de-ETL-e-carga`
+
+Responsável por:
+
+- Execução do processo de carga (ETL) para a camada de staging  
+- Criação e documentação da tabela `stg_escolas_2024` (DDL e evidências)  
+- Validação pós-carga via consultas no DBeaver  
+- Organização da base intermediária para posterior consolidação analítica  
+
+**Observação:** A tabela `stg_escolas_2024` representa a camada de staging. Variáveis complementares previstas no escopo analítico foram incorporadas posteriormente na camada analítica utilizada nas consultas OLAP.
+
+---
+
+## 5. Operações OLAP – Thais  
+**Branch:** `Consultas-OLAP-e-Analises`
+
+Responsável por:
+
+- Construção da camada analítica `microdados_ed_basica`, derivada da tabela staging  
+- Incorporação de variáveis previstas na Fase 1 não contempladas na camada de staging  
+- Desenvolvimento das consultas OLAP para análise comparativa  
+- Criação de views analíticas padronizadas (0–1) para integração com Power BI  
+- Tratamento metodológico de valores nulos e padronização dos indicadores  
+
+A tabela `microdados_ed_basica` representa a camada analítica consolidada do projeto, utilizada na geração dos indicadores estruturais, análises comparativas e evidências apresentadas na Fase 2.
+
+---
+
+### Principais resultados identificados:
+
+- Forte desigualdade territorial, com maior concentração de déficits nas regiões Norte e Nordeste  
+- Maior vulnerabilidade estrutural na rede municipal  
+- Persistência do esgotamento sanitário como principal gargalo  
+- Déficit crítico nas escolas rurais  
+- Diferenças regionais na densidade média de alunos por sala  
+
+**Status:** Em desenvolvimento
+
+---
+
+## Estrutura do Repositório – Fase 2
+
+- `data/raw` → Referência ao microdado original (não versionado)
+- `data/processed` → Dataset filtrado para escopo analítico
+- `database/ddl` → Estrutura da tabela staging (`stg_escolas_2024`)
+- `database/views` → Views analíticas (camada OLAP)
+- `consultas_olap.sql` → Consultas desenvolvidas
+- `analises_olap.md` → Interpretação dos resultados
+- `modelagem_analitica.md` → Estrutura conceitual da camada analítica
+- `origem_dados.md` → Documentação da fonte e extração
+- `detalhamento_tecnico_etl.md` → Documentação técnica do pipeline
 
 ---
 
