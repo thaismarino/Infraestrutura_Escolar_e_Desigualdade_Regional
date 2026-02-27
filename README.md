@@ -125,6 +125,8 @@ Indicadores ponderados por matrícula aplicados exclusivamente às escolas rurai
 Consultas:
 10
 
+---
+
 As consultas SQL encontram-se no arquivo `consultas_olap.sql`, e as análises interpretativas com evidências estão documentadas em `analises_olap.md`.
 
 As views analíticas encontram-se na pasta `database/views`, retornando percentuais no padrão decimal (0–1) para utilização no Power BI.
