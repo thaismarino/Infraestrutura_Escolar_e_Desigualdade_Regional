@@ -269,13 +269,18 @@ A visualização consolida o recorte rural (TP_LOCALIZACAO = 2) e evidencia o ba
 
 ### Interpretação
 
-A análise evidencia disparidade expressiva na cobertura de esgotamento sanitário entre as regiões brasileiras.
+A análise evidencia disparidade expressiva na cobertura de esgotamento sanitário entre as regiões brasileiras quando observado o percentual de escolas sem acesso à rede pública de esgoto.
 
-Na Região Norte, **86,45%** das escolas não possuem acesso à rede pública de esgoto, percentual significativamente superior ao observado no Sudeste, onde apenas **10,65%** das unidades encontram-se nessa condição.
+A Região Norte apresenta **86,45%** das escolas sem rede pública de esgoto, configurando o maior déficit estrutural do país. Em contraste, a Região Sudeste registra apenas **10,65%** das unidades nessa condição, evidenciando diferença regional superior a 75 pontos percentuais.
 
-O contraste regional demonstra forte concentração do déficit sanitário nas regiões Norte e Nordeste, reforçando a persistência de desigualdades estruturais na infraestrutura escolar brasileira.
+O Nordeste também apresenta percentual elevado de escolas sem esgoto, reforçando a concentração do déficit sanitário nas regiões Norte e Nordeste.
 
-A leitura do indicador sob a perspectiva da ausência do serviço torna ainda mais evidente a magnitude da carência sanitária em determinadas regiões do país.
+A leitura do indicador sob a perspectiva da ausência do serviço torna mais evidente a magnitude da desigualdade estrutural, destacando que o problema sanitário permanece fortemente territorializado.
 
-> Observação: Os percentuais foram calculados considerando apenas escolas com informação válida (0 ou 1) para o indicador.
+> Observação: Os percentuais foram calculados considerando exclusivamente escolas com informação válida (0 ou 1) para o indicador, excluindo registros sem dado do denominador.
 
+### Evidência Visual (Power BI) - Consulta 11
+
+![Impacto estrutural nas escolas rurais - Power BI](analises/img/11_escolas_sem_esgoto_por_regiao_powerbi.png)
+
+O gráfico evidencia o ranking regional das escolas sem acesso à rede pública de esgoto, destacando a Região Norte com o maior percentual de ausência do serviço e o Sudeste com o menor, reforçando a concentração territorial do déficit sanitário.
