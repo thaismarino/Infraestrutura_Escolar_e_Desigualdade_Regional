@@ -223,19 +223,19 @@ A visualização confirma que a conectividade digital apresenta cobertura quase 
 
 ### Interpretação
 
-A análise da razão entre matrículas e salas utilizadas indica diferenças na pressão estrutural das unidades escolares entre as regiões.
+A análise da razão entre matrículas e salas utilizadas evidencia diferenças na pressão estrutural das unidades escolares entre as regiões brasileiras.
 
-A Região Norte apresenta a maior média, com 33,49 matrículas por sala, enquanto a Região Sul registra o menor valor, com 25,65.
+A Região Norte apresenta a maior média, com **33,49** matrículas por sala, enquanto a Região Sul registra o menor valor, com **25,65**. A diferença de aproximadamente oito alunos por sala indica variação relevante na densidade de ocupação dos espaços físicos escolares.
 
-A diferença observada sugere maior concentração de alunos por espaço físico nas regiões com menor infraestrutura consolidada, pode indicar maior pressão sobre a infraestrutura física das unidades escolares e a qualidade do ambiente escolar.
+Os resultados sugerem maior concentração de estudantes por sala nas regiões Norte e Centro-Oeste, o que pode indicar maior pressão sobre a infraestrutura física das unidades escolares. Em contraste, a Região Sul apresenta menor densidade média, indicando condições potencialmente mais equilibradas quanto à ocupação dos espaços.
 
-Os dados indicam que a desigualdade educacional não se manifesta apenas na disponibilidade de serviços e conectividade, mas também na capacidade física das unidades escolares.
+A análise demonstra que a desigualdade educacional não se manifesta apenas na disponibilidade de serviços e conectividade, mas também na capacidade física instalada das escolas, elemento fundamental para a qualidade do ambiente escolar
 
 ### Evidência Visual (Power BI) - Consulta 9 
 
 ![Matrículas por Sala por Região - Power BI](analises/img/09_matriculas_por_sala_por_regiao_powerbi.png)
 
-A razão entre matrículas e salas utilizadas evidencia diferenças na pressão estrutural entre regiões, indicando maior concentração de alunos por sala em regiões com menor infraestrutura consolidada.
+A visualização evidencia diferenças na densidade média de alunos por sala entre as regiões, indicando maior pressão estrutural no Norte e menor no Sul, reforçando que a desigualdade educacional também se manifesta na capacidade física das unidades escolares.
 
 ---
 
