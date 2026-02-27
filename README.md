@@ -1,14 +1,20 @@
 # Consultas OLAP e Análises
 
-Esta etapa do projeto é responsável pela construção das consultas OLAP, modelagem analítica e geração de análises estratégicas a partir dos dados do Censo Escolar 2024. 
+Esta etapa do projeto é responsável pela construção das consultas OLAP, modelagem analítica e geração de análises estratégicas a partir dos dados do Censo Escolar 2024.
 
-O foco está na análise de desigualdades educacionais com base em:
+O foco está na análise de desigualdades educacionais sob duas perspectivas complementares:
+
+• Estrutura por unidade escolar (percentual de escolas)  
+• Impacto ponderado por matrícula (percentual de estudantes afetados)
+
+As análises contemplam:
 
 - Região
 - Dependência administrativa
 - Localização urbana/rural
 - Infraestrutura básica
 - Conectividade
+- Impacto estrutural sobre matrículas
 
 ---
 
@@ -80,6 +86,34 @@ Nesta etapa foram desenvolvidas consultas analíticas com foco na identificaçã
 10. Impacto estrutural nas escolas rurais  
 11. Percentual de escolas sem rede pública de esgoto por região  
 
+
+## Estrutura Analítica das Consultas
+
+As consultas foram organizadas em três eixos metodológicos:
+
+### 1) Estrutura por Escola
+
+Indicadores calculados com base no total de unidades escolares, incluindo tratamento explícito de valores nulos.
+
+Consultas:
+1 a 6 e 11
+
+### 2) Impacto Ponderado por Matrícula
+
+Indicadores calculados com base na soma de matrículas (QT_MAT_BAS), permitindo avaliar o impacto real das condições estruturais sobre o conjunto de estudantes atendidos.
+
+Consultas:
+7 e 8
+
+Essa abordagem altera a perspectiva analítica, pois mede não apenas a quantidade de escolas com determinada infraestrutura, mas o volume de alunos efetivamente impactados.
+
+### 3) Pressão Estrutural
+Indicadores relacionados à capacidade física e organização escolar.
+
+Consultas:
+9 e 10
+
 As consultas SQL encontram-se no arquivo `consultas_olap.sql`, e as análises interpretativas com evidências estão documentadas em `analises_olap.md`.
 
+As views analíticas encontram-se na pasta database/views, retornando percentuais no padrão decimal (0–1) para utilização no Power BI, onde a formatação percentual é aplicada na camada de visualização.
   
