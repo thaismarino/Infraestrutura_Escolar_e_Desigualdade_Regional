@@ -1,5 +1,4 @@
   # ETL – CAMADA DE STAGING
-(isso aqui não precisa) Projeto: Censo Escolar 2024
 
 
 ## INTRODUÇÃO
