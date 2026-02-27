@@ -59,6 +59,8 @@ A solução foi estruturada em duas camadas complementares:
 
 A camada analítica foi construída a partir do microdado filtrado, garantindo maior abrangência para as operações analíticas desenvolvidas nesta etapa.
 
+---
+
 ### Dicionário de Dados
 
 Foi elaborado um dicionário específico para o dataset filtrado, contendo:
@@ -86,6 +88,7 @@ Nesta etapa foram desenvolvidas consultas analíticas com foco na identificaçã
 10. Impacto estrutural nas escolas rurais  
 11. Percentual de escolas sem rede pública de esgoto por região  
 
+---
 
 ## Estrutura Analítica das Consultas
 
