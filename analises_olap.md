@@ -198,19 +198,21 @@ O gráfico confirma que, quando ponderada por matrículas, a conectividade digit
 
 ### Interpretação
 
-Ao considerar o volume de matrículas, observa-se que o acesso à internet atinge níveis elevados em todas as dependências administrativas, superando 97% nas redes estadual e municipal e alcançando praticamente universalização nas redes federal e privada.
+Ao considerar o volume de matrículas, observa-se que o acesso à internet atinge patamar praticamente universal em todas as dependências administrativas, alcançando **100%** na rede federal, **99,60%** na rede privada e aproximadamente **97%** nas redes estadual e municipal.
 
-Esse resultado indica que, sob a perspectiva do aluno, apresenta elevada cobertura sob a perspectiva das matrículas, mesmo nas redes com menor infraestrutura média quando analisadas por número de escolas.
+Esse resultado indica que, sob a perspectiva do estudante, a conectividade digital apresenta cobertura amplamente consolidada, independentemente da dependência administrativa.
 
-Entretanto, a análise do esgotamento sanitário revela disparidades mais relevantes. A rede municipal apresenta 60,85% das matrículas em escolas com acesso à rede pública de esgoto, percentual inferior ao observado nas redes estadual (74,02%) e privada (90,85%).
+Entretanto, a análise do esgotamento sanitário revela disparidades estruturais mais expressivas. A rede municipal apresenta **60,85%** das matrículas em escolas com acesso à rede pública de esgoto, percentual inferior ao observado na rede estadual (**74,02%**) e significativamente abaixo da rede privada (**90,85%**).
 
-Os dados sugerem que, embora a conectividade digital esteja relativamente distribuída entre as redes, os déficits estruturais de saneamento permanecem concentrados principalmente na rede municipal, que atende o maior contingente de alunos.
+Considerando que a rede municipal concentra o maior volume absoluto de matrículas, o déficit sanitário nessa dependência administrativa assume maior relevância social, ampliando o impacto estrutural sobre o conjunto de alunos atendidos.
+
+A análise ponderada por matrículas demonstra que a desigualdade entre redes não se manifesta de forma significativa na conectividade digital, mas permanece relevante na infraestrutura sanitária.
 
 ### Evidência Visual (Power BI) - Consulta 8 
 
 ![Impacto por Matrículas - Dependência - Power BI](analises/img/08_matriculas_internet_esgoto_por_dependencia_powerbi.png)
 
-A análise ponderada por matrículas indica que a conectividade atinge percentuais elevados entre redes, mas os déficits de esgotamento sanitário permanecem mais concentrados, especialmente na rede municipal, que atende o maior contingente de alunos.
+A visualização confirma que a conectividade digital apresenta cobertura quase universal entre as dependências administrativas, enquanto o acesso à rede pública de esgoto permanece desigual, com maior impacto estrutural na rede municipal, que concentra o maior contingente de matrículas
 
 ---
 
