@@ -2,10 +2,11 @@
 
 Esta etapa do projeto é responsável pela construção das consultas OLAP, modelagem analítica e geração de análises estratégicas a partir dos dados do Censo Escolar 2024.
 
-O foco está na análise de desigualdades educacionais sob duas perspectivas complementares:
+O foco está na análise de desigualdades educacionais sob três perspectivas complementares:
 
 • Estrutura por unidade escolar (percentual de escolas)  
-• Impacto ponderado por matrícula (percentual de estudantes afetados)
+• Impacto ponderado por matrícula (percentual de estudantes afetados)  
+• Pressão estrutural (capacidade física instalada)
 
 As análises contemplam:
 
@@ -111,12 +112,22 @@ Consultas:
 Essa abordagem altera a perspectiva analítica, pois mede não apenas a quantidade de escolas com determinada infraestrutura, mas o volume de alunos efetivamente impactados.
 
 ### 3) Pressão Estrutural
+
 Indicadores relacionados à capacidade física e organização escolar.
 
 Consultas:
-9 e 10
+9
+
+### 4) Impacto Estrutural no Recorte Rural
+
+Indicadores ponderados por matrícula aplicados exclusivamente às escolas rurais (TP_LOCALIZACAO = 2), permitindo avaliar o efeito estrutural sobre estudantes em áreas de maior vulnerabilidade territorial.
+
+Consultas:
+10
 
 As consultas SQL encontram-se no arquivo `consultas_olap.sql`, e as análises interpretativas com evidências estão documentadas em `analises_olap.md`.
 
-As views analíticas encontram-se na pasta database/views, retornando percentuais no padrão decimal (0–1) para utilização no Power BI, onde a formatação percentual é aplicada na camada de visualização.
+As views analíticas encontram-se na pasta `database/views`, retornando percentuais no padrão decimal (0–1) para utilização no Power BI.
+
+Nas consultas executadas no DBeaver, os percentuais foram apresentados na escala 0–100 para conferência e validação dos resultados.
   
