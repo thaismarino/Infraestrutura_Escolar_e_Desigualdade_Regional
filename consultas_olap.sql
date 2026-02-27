@@ -257,31 +257,84 @@ ORDER BY pct_mat_em_escolas_com_internet DESC;
 -- Métrica: % das matrículas em escolas com internet e esgoto de rede
 
 SELECT
-  TP_DEPENDENCIA,
-  SUM(QT_MAT_BAS) AS total_matriculas,
+  CASE TP_DEPENDENCIA
+    WHEN 1 THEN 'Federal'
+    WHEN 2 THEN 'Estadual'
+    WHEN 3 THEN 'Municipal'
+    WHEN 4 THEN 'Privada'
+    ELSE 'Não informado'
+  END AS dependencia_administrativa,
+
+  SUM(COALESCE(QT_MAT_BAS, 0)) AS total_matriculas,
+
+  /* INTERNET */
+  SUM(CASE WHEN IN_INTERNET = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_com_internet,
+  SUM(CASE WHEN IN_INTERNET IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_internet_sem_dado,
+
   ROUND(
-    SUM(CASE WHEN IN_INTERNET = 1 THEN QT_MAT_BAS ELSE 0 END) / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    SUM(CASE WHEN IN_INTERNET = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
     2
   ) AS pct_matriculas_com_internet,
+
   ROUND(
-    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN QT_MAT_BAS ELSE 0 END) / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    SUM(CASE WHEN IN_INTERNET IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
     2
-  ) AS pct_matriculas_com_esgoto_rede
+  ) AS pct_matriculas_internet_sem_dado,
+
+  /* ESGOTO */
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_com_esgoto_rede,
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_esgoto_sem_dado,
+
+  ROUND(
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
+    2
+  ) AS pct_matriculas_com_esgoto_rede,
+
+  ROUND(
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
+    2
+  ) AS pct_matriculas_esgoto_sem_dado
+
 FROM microdados_ed_basica
 GROUP BY TP_DEPENDENCIA
 ORDER BY TP_DEPENDENCIA;
 
 -- 9) Pressão de infraestrutura: matrículas por sala por região
--- Métrica: total de matrículas / total de salas utilizadas
+-- Métrica: total de matrículas / total de salas utilizadas (somente salas > 0)
 
 SELECT
   NO_REGIAO,
-  SUM(QT_MAT_BAS) AS total_matriculas,
-  SUM(QT_SALAS_UTILIZADAS) AS total_salas,
+
+  /* Totais */
+  SUM(COALESCE(QT_MAT_BAS, 0)) AS total_matriculas,
+
+  /* Salas válidas */
+  SUM(
+    CASE
+      WHEN QT_SALAS_UTILIZADAS IS NOT NULL AND QT_SALAS_UTILIZADAS > 0
+      THEN QT_SALAS_UTILIZADAS
+      ELSE 0
+    END
+  ) AS total_salas_validas,
+
+  /* Contagem para transparência */
+  SUM(CASE WHEN QT_SALAS_UTILIZADAS IS NULL THEN 1 ELSE 0 END) AS escolas_sala_sem_dado,
+  SUM(CASE WHEN QT_SALAS_UTILIZADAS = 0 THEN 1 ELSE 0 END) AS escolas_sala_zero,
+
   ROUND(
-    SUM(QT_MAT_BAS) / NULLIF(SUM(QT_SALAS_UTILIZADAS),0),
+    SUM(COALESCE(QT_MAT_BAS, 0)) /
+    NULLIF(
+      SUM(CASE WHEN QT_SALAS_UTILIZADAS IS NOT NULL AND QT_SALAS_UTILIZADAS > 0
+               THEN QT_SALAS_UTILIZADAS ELSE 0 END),
+      0
+    ),
     2
   ) AS matriculas_por_sala
+
 FROM microdados_ed_basica
 GROUP BY NO_REGIAO
 ORDER BY matriculas_por_sala DESC;
