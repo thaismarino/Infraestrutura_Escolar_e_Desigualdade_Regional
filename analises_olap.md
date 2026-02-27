@@ -1,6 +1,13 @@
 # Análises OLAP
 
-As análises a seguir foram estruturadas em três eixos principais: território (região e localização), dependência administrativa e impacto ponderado por matrícula, permitindo avaliar desigualdades educacionais sob diferentes perspectivas estruturais.
+As análises foram estruturadas em quatro eixos principais:
+
+1) Território (região e localização urbana/rural)
+2) Dependência administrativa
+3) Impacto ponderado por matrícula
+4) Pressão estrutural (capacidade física instalada)
+
+Essa organização permite avaliar desigualdades educacionais sob diferentes perspectivas: distribuição territorial, estrutura administrativa, impacto sobre estudantes e capacidade física das unidades escolares.
 
 ---
 
@@ -167,6 +174,14 @@ O gráfico confirma a diferença estrutural entre escolas urbanas e rurais, evid
 
 ---
 
+## Transição Metodológica
+
+As análises anteriores consideraram o número total de escolas como base de cálculo.
+
+A partir da Consulta 7, a métrica passa a ser ponderada por matrícula (`QT_MAT_BAS`), permitindo avaliar o impacto estrutural sob a perspectiva do estudante, e não apenas da unidade escolar.
+
+---
+
 ## 7) Impacto por Matrículas (Região)
 
 ### Evidência (resultado no DBeaver)
@@ -281,6 +296,19 @@ A leitura do indicador sob a perspectiva da ausência do serviço torna mais evi
 
 ### Evidência Visual (Power BI) - Consulta 11
 
-![Impacto estrutural nas escolas rurais - Power BI](analises/img/11_escolas_sem_esgoto_por_regiao_powerbi.png)
+![Escolas sem esgoto por região - Power BI](analises/img/11_escolas_sem_esgoto_por_regiao_powerbi.png)
 
 O gráfico evidencia o ranking regional das escolas sem acesso à rede pública de esgoto, destacando a Região Norte com o maior percentual de ausência do serviço e o Sudeste com o menor, reforçando a concentração territorial do déficit sanitário.
+
+---
+
+## Síntese Analítica
+
+Os resultados evidenciam que a desigualdade educacional brasileira manifesta-se em múltiplas dimensões:
+
+- **Territorial:** forte concentração do déficit sanitário nas regiões Norte e Nordeste.
+- **Administrativa:** maior vulnerabilidade estrutural na rede municipal.
+- **Ruralidade:** déficit crítico de saneamento nas áreas rurais.
+- **Estrutural física:** maior densidade de alunos por sala nas regiões com menor consolidação de infraestrutura.
+
+Embora a conectividade digital apresente avanço relevante quando ponderada por matrícula, os indicadores de infraestrutura sanitária permanecem como o principal gargalo estrutural, especialmente nas regiões e redes mais vulneráveis.
