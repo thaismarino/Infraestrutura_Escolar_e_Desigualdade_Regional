@@ -340,20 +340,45 @@ GROUP BY NO_REGIAO
 ORDER BY matriculas_por_sala DESC;
 
 -- 10) Impacto por matrícula nas escolas rurais (infraestrutura básica)
+-- Métrica: % das matrículas rurais em escolas com esgoto de rede e água de rede
 
 SELECT
   COUNT(*) AS total_escolas_rurais,
-  SUM(QT_MAT_BAS) AS total_matriculas_rurais,
+
+  SUM(COALESCE(QT_MAT_BAS, 0)) AS total_matriculas_rurais,
+
+  /* ESGOTO */
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_rurais_com_esgoto,
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_rurais_esgoto_sem_dado,
+
   ROUND(
-    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN QT_MAT_BAS ELSE 0 END) 
-    / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
     2
   ) AS pct_matriculas_rurais_com_esgoto,
+
   ROUND(
-    SUM(CASE WHEN IN_AGUA_REDE_PUBLICA = 1 THEN QT_MAT_BAS ELSE 0 END) 
-    / NULLIF(SUM(QT_MAT_BAS),0) * 100,
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
     2
-  ) AS pct_matriculas_rurais_com_agua
+  ) AS pct_matriculas_rurais_esgoto_sem_dado,
+
+  /* ÁGUA */
+  SUM(CASE WHEN IN_AGUA_REDE_PUBLICA = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_rurais_com_agua,
+  SUM(CASE WHEN IN_AGUA_REDE_PUBLICA IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END) AS mat_rurais_agua_sem_dado,
+
+  ROUND(
+    SUM(CASE WHEN IN_AGUA_REDE_PUBLICA = 1 THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
+    2
+  ) AS pct_matriculas_rurais_com_agua,
+
+  ROUND(
+    SUM(CASE WHEN IN_AGUA_REDE_PUBLICA IS NULL THEN COALESCE(QT_MAT_BAS,0) ELSE 0 END)
+    / NULLIF(SUM(COALESCE(QT_MAT_BAS,0)), 0) * 100,
+    2
+  ) AS pct_matriculas_rurais_agua_sem_dado
+
 FROM microdados_ed_basica
 WHERE TP_LOCALIZACAO = 2;
 
