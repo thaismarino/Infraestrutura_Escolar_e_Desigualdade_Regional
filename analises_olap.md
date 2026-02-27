@@ -246,17 +246,19 @@ A visualização evidencia diferenças na densidade média de alunos por sala en
 
 ### Interpretação
 
-A análise específica das escolas rurais evidencia um cenário de vulnerabilidade estrutural significativa.
+A análise específica das escolas localizadas em áreas rurais evidencia cenário de vulnerabilidade estrutural significativa.
 
-Embora o universo analisado compreenda mais de cinco milhões de matrículas em áreas rurais, apenas 13,86% dos alunos estão matriculados em escolas com acesso à rede pública de esgoto. No caso do abastecimento de água via rede pública, o percentual atinge 48,28%.
+Considerando um universo superior a cinco milhões de matrículas na zona rural, apenas **13,86%** dos estudantes estão matriculados em escolas com acesso à rede pública de esgoto. No caso do abastecimento de água por rede pública, o percentual atinge **48,28%**, indicando que mais da metade das matrículas rurais está concentrada em unidades sem esse serviço.
 
-Os dados indicam que a maioria dos estudantes da zona rural está inserida em unidades escolares sem cobertura adequada de serviços sanitários básicos, revelando um déficit estrutural que ultrapassa a dimensão tecnológica e alcança condições essenciais de salubridade e funcionamento escolar.
+Os resultados demonstram que o déficit sanitário nas áreas rurais possui magnitude estrutural relevante, afetando diretamente grande parcela dos estudantes. Diferentemente dos indicadores de conectividade digital, a carência observada refere-se a serviços básicos essenciais ao funcionamento escolar e às condições mínimas de salubridade.
+
+A análise reforça que a desigualdade educacional no Brasil não se restringe à dimensão tecnológica, mas está profundamente associada às condições estruturais fundamentais das unidades escolares, especialmente no meio rural.
 
 ### Evidência Visual (Power BI) - Consulta 10
 
 ![Impacto estrutural nas escolas rurais - Power BI](analises/img/10_impacto_estrutural_escolas_rurais_powerbi.png)
 
-A visualização consolida o recorte rural (TP_LOCALIZACAO = 2), evidenciando o baixo percentual de matrículas em escolas com rede pública de esgoto e a cobertura parcial de abastecimento de água.
+A visualização consolida o recorte rural (TP_LOCALIZACAO = 2) e evidencia o baixo percentual de matrículas em escolas com rede pública de esgoto (**13,86%**) e a cobertura parcial de abastecimento de água (**48,28%**), reforçando a magnitude do déficit sanitário nas áreas rurais.
 
 ---
 
