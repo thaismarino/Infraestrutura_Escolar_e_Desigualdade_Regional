@@ -118,6 +118,4 @@ O pipeline de ETL desenvolvido para o Censo Escolar 2024 cumpre o objetivo de or
 
 A adoção da camada de staging como componente arquitetural intermediário assegura maior governança sobre os dados brutos e estabelece base sólida para futuras etapas de transformação e modelagem analítica.
 
-O pipeline de ETL desenvolvido para o Censo Escolar 2024 cumpre o objetivo de organizar e estruturar os microdados em ambiente relacional, garantindo controle técnico, reprodutibilidade e separação adequada entre ingestão e análise.
-
-A adoção de uma camada de staging assegura maior governança sobre os dados brutos e estabelece base sólida para futuras etapas de transformação e modelagem analítica. 
+ 
