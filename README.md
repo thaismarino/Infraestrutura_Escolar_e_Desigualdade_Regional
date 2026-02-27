@@ -66,8 +66,7 @@ Nesta etapa não houve execução do ETL, apenas planejamento e modelagem.
 - Formato: CSV  
 - Abrangência: Nacional  
 
-Link oficial para download dos microdados:
-[Microdados:](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar)
+[Link oficial para download dos microdados:](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar)
 
 Os dados utilizados correspondem ao arquivo de escolas da edição 2024.
 
