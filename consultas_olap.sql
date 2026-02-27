@@ -382,16 +382,37 @@ SELECT
 FROM microdados_ed_basica
 WHERE TP_LOCALIZACAO = 2;
 
--- 11) Percentual de escolas sem rede publica de esgoto por regiao
+-- 11) Percentual de escolas SEM rede pública de esgoto por região
+-- Denominador: apenas escolas com dado válido (0 ou 1)
 
 SELECT
   NO_REGIAO,
+
+  /* Total geral (inclui NULL) */
   COUNT(*) AS total_escolas,
+
+  /* Total com dado válido (0/1) */
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IN (0,1) THEN 1 ELSE 0 END) AS escolas_com_dado,
+
+  /* Quebra */
   SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 0 THEN 1 ELSE 0 END) AS escolas_sem_esgoto,
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 1 THEN 1 ELSE 0 END) AS escolas_com_esgoto,
+  SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN 1 ELSE 0 END) AS escolas_sem_dado,
+
+  /* Percentual SEM esgoto (sobre escolas com dado válido) */
   ROUND(
     SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA = 0 THEN 1 ELSE 0 END)
-    / NULLIF(COUNT(IN_ESGOTO_REDE_PUBLICA), 0) * 100
-  , 2) AS pct_escolas_sem_esgoto
+    / NULLIF(SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IN (0,1) THEN 1 ELSE 0 END), 0) * 100,
+    2
+  ) AS pct_escolas_sem_esgoto,
+
+  /* Percentual SEM DADO (sobre total de escolas) */
+  ROUND(
+    SUM(CASE WHEN IN_ESGOTO_REDE_PUBLICA IS NULL THEN 1 ELSE 0 END)
+    / NULLIF(COUNT(*), 0) * 100,
+    2
+  ) AS pct_escolas_sem_dado
+
 FROM microdados_ed_basica
 GROUP BY NO_REGIAO
 ORDER BY pct_escolas_sem_esgoto DESC;
