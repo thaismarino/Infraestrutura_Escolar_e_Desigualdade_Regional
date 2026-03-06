@@ -160,7 +160,7 @@ Responsável por:
 
 ---
 
-## 👤 3. Detalhamento Técnico do ETL – Bruno  
+## 3. Detalhamento Técnico do ETL – Bruno  
 **Branch:** `Detalhamento-técnico`
 
 Responsável por:
