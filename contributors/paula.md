@@ -1,6 +1,6 @@
 # Contribuição
 
-...
+
 
 **Nome:** Paula Barros Ortiz
 
