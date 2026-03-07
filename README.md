@@ -41,6 +41,14 @@ O projeto está dividido em duas etapas principais:
 
 ---
 
+# Vídeo do Projeto
+
+
+
+https://github.com/user-attachments/assets/16e41835-b82e-4cee-9190-47c15d9e358b
+
+
+
 # Fase 1 – Planejamento e Modelagem
 
 A Primeira Etapa teve caráter conceitual e metodológico, com foco na compreensão do problema de negócio, definição da base de dados e planejamento do processo analítico.
