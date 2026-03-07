@@ -47,7 +47,7 @@ O projeto está dividido em duas etapas principais:
 
 https://github.com/user-attachments/assets/16e41835-b82e-4cee-9190-47c15d9e358b
 
-
+---
 
 # Fase 1 – Planejamento e Modelagem
 
