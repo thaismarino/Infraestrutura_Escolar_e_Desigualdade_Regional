@@ -134,7 +134,7 @@ Essa separação garante organização, rastreabilidade e suporte adequado às a
 ---
 
 ## 1. Definição das Tecnologias e Vídeo – Felipe  
-**Branch:** `feature/definicao-tecnologias`
+**Branch:** `Definicao-tecnologias`
 
 Responsável por:
 
@@ -178,7 +178,7 @@ Responsável por:
 
 Responsável por:
 
-- Execução do processo de carga (ETL) para a camada de staging  
+- Execução da etapa de carga do pipeline ETL para a camada de staging
 - Criação e documentação da tabela `stg_escolas_2024` (DDL e evidências)  
 - Validação pós-carga via consultas no DBeaver  
 - Organização da base intermediária para posterior consolidação analítica  
@@ -209,8 +209,6 @@ A tabela `microdados_ed_basica` representa a camada analítica consolidada do pr
 - Persistência do esgotamento sanitário como principal gargalo  
 - Déficit crítico nas escolas rurais  
 - Diferenças regionais na densidade média de alunos por sala  
-
-**Status:** Em desenvolvimento
 
 ---
 
