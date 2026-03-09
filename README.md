@@ -173,7 +173,7 @@ Responsável por:
 
 ---
 
-## 4. Execução da Carga e Estrutura Relacional – Paula  
+## 4. Execução da Carga e Estrutura Relacional e PDF – Paula  
 **Branch:** `Processo-de-ETL-e-carga`
 
 Responsável por:
@@ -181,7 +181,8 @@ Responsável por:
 - Execução da etapa de carga do pipeline ETL para a camada de staging
 - Criação e documentação da tabela `stg_escolas_2024` (DDL e evidências)  
 - Validação pós-carga via consultas no DBeaver  
-- Organização da base intermediária para posterior consolidação analítica  
+- Organização da base intermediária para posterior consolidação analítica
+- Responsável pela organização e consolidação do documento acadêmico da Segunda Etapa do projeto.
 
 **Observação:** A tabela `stg_escolas_2024` representa a camada de staging. Variáveis complementares previstas no escopo analítico foram incorporadas posteriormente na camada analítica utilizada nas consultas OLAP.
 
